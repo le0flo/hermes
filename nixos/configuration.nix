@@ -93,18 +93,18 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    # KDE
     kdePackages.kate
     kdePackages.discover
     networkmanagerapplet
     vlc
+
+    # Utilities
     wget
     curl
     neovim
     fastfetch
   ];
-
-  # Dconf
-  programs.dconf.enable = true;
 
   # GPG
   programs.gnupg.agent.enable = true;
