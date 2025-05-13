@@ -14,6 +14,14 @@
       # Games
       pkgs.prismlauncher
       pkgs.heroic
+
+      # Languages
+      pkgs.gcc
+      pkgs.temurin-bin
+      pkgs.python314
+      pkgs.rustup
+      pkgs.nodePackages.nodejs
+      pkgs.texliveBasic
     ];
   };
 
@@ -27,9 +35,8 @@
     syntaxHighlighting.enable = true;
   };
 
-  # Development
+  # Git
   programs.git.enable = true;
-  programs.java.enable = true;
 
   home.stateVersion = "24.11";
 }
