@@ -53,12 +53,16 @@
   };
 
   services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
+
   services.desktopManager.plasma6.enable = true;
+
   environment.plasma6.excludePackages = [
     pkgs.xterm
     pkgs.kdePackages.okular
     pkgs.kdePackages.elisa
     pkgs.kdePackages.xwaylandvideobridge
+    pkgs.kdePackages.plasma-browser-integration
   ];
 
   # Audio
@@ -98,6 +102,9 @@
     neovim
     fastfetch
   ];
+
+  # Dconf
+  programs.dconf.enable = true;
 
   # GPG
   programs.gnupg.agent.enable = true;
