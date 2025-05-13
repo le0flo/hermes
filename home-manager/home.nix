@@ -1,7 +1,4 @@
-{ inputs, lib, config, pkgs,...}:
-{
-  imports = [];
-
+{ inputs, lib, config, pkgs,...}: {
   nixpkgs = {
     config.allowUnfree = true;
   };
@@ -13,22 +10,22 @@
       pkgs.firefox
       pkgs.keepassxc
       pkgs.zed-editor
+
+      # Games
+      pkgs.prismlauncher
+      pkgs.heroic
     ];
   };
 
-  # Agents
   programs.home-manager.enable = true;
-  programs.gnupg.agent.enable = true;
-  programs.gnupg.agent.enableSSHSupport = true;
 
   # Shell
-  # TODO
-
-  # Steam
-  programs.steam.enable = true;
-  programs.gamescope.enable = true;
-  programs.steam.gamescopeSession = true;
-  hardware.steam-hardware.enable = true;
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    enableVteIntegration = true;
+    syntaxHighlighting.enable = true;
+  };
 
   # Development
   programs.git.enable = true;

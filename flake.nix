@@ -9,7 +9,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs }@inputs:
+  outputs = { self, nixpkgs, nixos-hardware, home-manager }@inputs:
   let
     system = "x86_64-linux";
 
