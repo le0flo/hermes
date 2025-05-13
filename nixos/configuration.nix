@@ -84,6 +84,17 @@
   services.flatpak.enable = true;
   services.power-profiles-daemon.enable = true;
 
+  # I2P
+  services.i2pd = {
+    enable = true;
+    address = "127.0.0.1";
+    proto = {
+      http.enable = true;
+      httpProxy.enable = true;
+      socksProxy.enable = true;
+    };
+  };
+
   # SSH
   services.openssh.enable = true;
   services.openssh.settings.PermitRootLogin = "no";
