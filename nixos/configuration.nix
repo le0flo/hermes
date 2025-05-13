@@ -1,8 +1,10 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
   imports = [
     ./hardware-configuration.nix
+    inputs.nixos-hardware.nixosModules.lenovo-thinkpad-l14-intel
+    inputs.home-manager.nixosModules.home-manager
   ];
 
   boot = {
@@ -88,17 +90,6 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
 
-  users.users.leo = {
-    isNormalUser = true;
-    description = "leo";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      keepassxc
-      firefox
-      zed-editor
-    ];
-  };
-
   environment.systemPackages = with pkgs; [
     kdePackages.kate
     kdePackages.discover
@@ -106,18 +97,23 @@
     vlc
     wget
     curl
-    zsh
     neovim
     fastfetch
-
-    rustup
-    git
   ];
 
-  programs.gnupg.agent.enable = true;
-  programs.gnupg.agent.enableSSHSupport = true;
+  # Users
+  users.users.leo = {
+    isNormalUser = true;
+    description = "leo";
+    extraGroups = [ "networkmanager" "wheel" ];
+  };
 
-  programs.java.enable = true;
+  home-manager = {
+    extraSpecialArgs = { inherit inputs };
+    users = {
+      leo = import ../home-manager/home.nix;
+    };
+  };
 
   system.stateVersion = "24.11";
 }
