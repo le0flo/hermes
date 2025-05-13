@@ -22,6 +22,7 @@
       pkgs.rustup
       pkgs.nodePackages.nodejs
       pkgs.texliveBasic
+      pkgs.nixd
     ];
   };
 
