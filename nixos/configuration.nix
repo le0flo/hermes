@@ -1,6 +1,4 @@
-{ inputs, config, pkgs, ... }:
-
-{
+{ inputs, config, pkgs, ... }: {
   imports = [
     ./hardware-configuration.nix
     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-l14-intel
@@ -86,7 +84,7 @@
   services.openssh.settings.PermitRootLogin = "no";
   services.openssh.settings.PasswordAuthentication = false;
 
-  # Packages and Users
+  # Packages
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
 
@@ -101,15 +99,24 @@
     fastfetch
   ];
 
+  # GPG
+  programs.gnupg.agent.enable = true;
+  programs.gnupg.agent.enableSSHSupport = true;
+
+  # Steam
+  programs.steam.enable = true;
+  programs.gamescope.enable = true;
+  hardware.steam-hardware.enable = true;
+
   # Users
   users.users.leo = {
     isNormalUser = true;
-    description = "leo";
+    description = "Leonardo";
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
   home-manager = {
-    extraSpecialArgs = { inherit inputs };
+    extraSpecialArgs = { inherit inputs; };
     users = {
       leo = import ../home-manager/home.nix;
     };
