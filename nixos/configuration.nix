@@ -26,6 +26,7 @@
     loader.efi.canTouchEfiVariables = true;
   };
 
+  # Networking
   networking.hostName = "hermes";
   networking.networkmanager.enable = true;
 
@@ -56,7 +57,6 @@
   services.displayManager.sddm.wayland.enable = true;
 
   services.desktopManager.plasma6.enable = true;
-
   environment.plasma6.excludePackages = [
     pkgs.xterm
     pkgs.kdePackages.okular
@@ -84,9 +84,15 @@
   services.flatpak.enable = true;
   services.power-profiles-daemon.enable = true;
 
+  # SSH
   services.openssh.enable = true;
   services.openssh.settings.PermitRootLogin = "no";
   services.openssh.settings.PasswordAuthentication = false;
+
+  # Virtualization
+  virtualisation.docker.enable = true;
+  virtualisation.libvirtd.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
 
   # Packages
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -117,11 +123,19 @@
   programs.gamemode.enable = true;
   hardware.steam-hardware.enable = true;
 
+  # Virt Manager
+  programs.virt-manager.enable = true;
+
   # Users
   users.users.leo = {
     isNormalUser = true;
     description = "Leonardo";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "libvirtd"
+      "docker"
+    ];
   };
 
   home-manager = {
