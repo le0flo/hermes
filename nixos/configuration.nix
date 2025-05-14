@@ -7,6 +7,8 @@
 
   boot = {
     consoleLogLevel = 3;
+
+    initrd.verbose = false;
     kernelParams = [
       "quiet"
       "splash"
@@ -20,21 +22,26 @@
 
     extraModprobeConfig = "options v4l2loopback devices=1 video_nr=1 card_label=\"OBS Cam\" exclusive_caps=1";
 
-    initrd.verbose = false;
-
     plymouth = {
       enable = true;
       theme = "bgrt";
     };
 
-    loader.timeout = 3;
-    loader.systemd-boot.enable = true;
-    loader.efi.canTouchEfiVariables = true;
+    loader = {
+      timeout = 3;
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
   };
 
   # Networking
-  networking.hostName = "hermes";
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "hermes";
+    networkmanager.enable = true;
+  };
+
+  # Bluetooth
+  hardware.bluetooth.enable = true;
 
   # Locales
   time.timeZone = "Europe/Rome";
@@ -83,9 +90,6 @@
     pulse.enable = true;
   };
 
-  # Bluetooth
-  hardware.bluetooth.enable = true;
-
   # Services
   services.printing.enable = true;
   services.libinput.enable = true;
@@ -115,14 +119,21 @@
   };
 
   # SSH
-  services.openssh.enable = true;
-  services.openssh.settings.PermitRootLogin = "no";
-  services.openssh.settings.PasswordAuthentication = false;
+  services.openssh = {
+    enable = true;
+
+    settings = {
+      PermitRootLogin = "no";
+      PasswordAuthentication = false;
+    };
+  };
 
   # Virtualization
-  virtualisation.docker.enable = true;
-  virtualisation.libvirtd.enable = true;
-  virtualisation.spiceUSBRedirection.enable = true;
+  virtualisation = {
+    docker.enable = true;
+    libvirtd.enable = true;
+    spiceUSBRedirection.enable = true;
+  };
 
   # Packages
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -147,25 +158,32 @@
   programs.zsh.enable = true;
 
   # GPG
-  programs.gnupg.agent.enable = true;
-  programs.gnupg.agent.enableSSHSupport = true;
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
 
   # Steam
-  programs.steam.enable = true;
-  programs.steam.gamescopeSession.enable = true;
+  hardware.steam-hardware.enable = true;
   programs.gamescope.enable = true;
   programs.gamemode.enable = true;
-  hardware.steam-hardware.enable = true;
+  programs.steam = {
+    enable = true;
+    gamescopeSession.enable = true;
+  };
 
   # Virt Manager
   programs.virt-manager.enable = true;
 
   # OBS
-  programs.obs-studio.enable = true;
-  programs.obs-studio.enableVirtualCamera = true;
-  programs.obs-studio.plugins = [
-    pkgs.obs-studio-plugins.droidcam-obs
-  ];
+  programs.obs-studio = {
+    enable = true;
+    enableVirtualCamera = true;
+
+    plugins = [
+      pkgs.obs-studio-plugins.droidcam-obs
+    ];
+  };
 
   # Users
   users.users.leo = {
