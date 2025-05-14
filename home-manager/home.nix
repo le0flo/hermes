@@ -35,6 +35,13 @@
     enableCompletion = true;
     enableVteIntegration = true;
     syntaxHighlighting.enable = true;
+
+    shellAliases = {
+      ll = "ls -la";
+      update-system = "sudo nixos-rebuild switch --flake ~/git/hermes";
+    };
+
+    history.size = 10000;
   };
 
   # Git
