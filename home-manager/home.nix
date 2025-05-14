@@ -10,6 +10,7 @@
       pkgs.firefox
       pkgs.keepassxc
       pkgs.zed-editor
+      pkgs.veracrypt
 
       # Games
       pkgs.prismlauncher
