@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }: {
+{ inputs, config, pkgs, ... }: {
   imports = [
     ./hardware-configuration.nix
     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-l14-intel
@@ -13,6 +13,12 @@
       "udev.log_priority=3"
       "boot.shell_on_fail"
     ];
+
+    extraModulePackages = with config.boot.kernelPackages; [
+      v4l2loopback
+    ];
+
+    extraModprobeConfig = "options v4l2loopback devices=1 video_nr=1 card_label=\"OBS Cam\" exclusive_caps=1";
 
     initrd.verbose = false;
 
@@ -46,6 +52,10 @@
     LC_TIME = "it_IT.UTF-8";
   };
 
+  # Security
+  security.rtkit.enable = true;
+  security.polkit.enable = true;
+
   # Desktop
   services.xserver.enable = false;
   services.xserver.xkb = {
@@ -65,7 +75,6 @@
   ];
 
   # Audio
-  security.rtkit.enable = true;
   services.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
@@ -112,6 +121,7 @@
     # KDE
     kdePackages.kate
     kdePackages.discover
+    kdePackages.filelight
     networkmanagerapplet
     vlc
 
@@ -121,6 +131,9 @@
     neovim
     fastfetch
   ];
+
+  # Shell
+  programs.zsh.enable = true;
 
   # GPG
   programs.gnupg.agent.enable = true;
@@ -136,10 +149,19 @@
   # Virt Manager
   programs.virt-manager.enable = true;
 
+  # OBS
+  programs.obs-studio.enable = true;
+  programs.obs-studio.enableVirtualCamera = true;
+  programs.obs-studio.plugins = [
+    pkgs.obs-studio-plugins.droidcam-obs
+  ];
+
   # Users
   users.users.leo = {
     isNormalUser = true;
     description = "Leonardo";
+    shell = pkgs.zsh;
+
     extraGroups = [
       "wheel"
       "networkmanager"
