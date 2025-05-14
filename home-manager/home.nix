@@ -38,6 +38,7 @@
 
     shellAliases = {
       ll = "ls -la";
+      ff = "fastfetch";
       update-system = "sudo nixos-rebuild switch --flake ~/git/hermes";
     };
 
