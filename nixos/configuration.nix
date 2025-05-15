@@ -81,6 +81,9 @@
     pkgs.kdePackages.plasma-browser-integration
   ];
 
+  # Portals
+  xdg.portal.enable = true;
+
   # Audio
   services.pulseaudio.enable = false;
   services.pipewire = {
@@ -95,6 +98,10 @@
   services.libinput.enable = true;
   services.flatpak.enable = true;
   services.power-profiles-daemon.enable = true;
+
+  # Mullvad VPN
+  services.mullvad-vpn.enable = true;
+  services.mullvad-vpn.package = pkgs.mullvad-vpn;
 
   # I2P
   services.i2pd = {
