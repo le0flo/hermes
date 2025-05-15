@@ -63,16 +63,23 @@
   security.rtkit.enable = true;
   security.polkit.enable = true;
 
-  # Desktop
-  services.xserver.enable = false;
-  services.xserver.xkb = {
-    layout = "it";
-    variant = "";
+  # X11
+  services.xserver = {
+    enable = false;
+    xkb = {
+      layout = "it";
+      variant = "";
+    };
   };
 
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
+  # SDDM
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+    theme = "breeze";
+  };
 
+  # KDE Plasma
   services.desktopManager.plasma6.enable = true;
   environment.plasma6.excludePackages = [
     pkgs.xterm
@@ -100,8 +107,10 @@
   services.power-profiles-daemon.enable = true;
 
   # Mullvad VPN
-  services.mullvad-vpn.enable = true;
-  services.mullvad-vpn.package = pkgs.mullvad-vpn;
+  services.mullvad-vpn = {
+    enable = true;
+    package = pkgs.mullvad-vpn;
+  };
 
   # I2P
   services.i2pd = {
