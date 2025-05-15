@@ -25,6 +25,7 @@
       pkgs.texliveBasic
       pkgs.nil
       pkgs.nixd
+      pkgs.digital
     ];
   };
 
