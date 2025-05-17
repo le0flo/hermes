@@ -16,6 +16,8 @@
       "boot.shell_on_fail"
     ];
 
+    supportedFilesystems = [ "ntfs" ];
+
     extraModulePackages = with config.boot.kernelPackages; [
       v4l2loopback
     ];
