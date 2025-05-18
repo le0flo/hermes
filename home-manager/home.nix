@@ -11,6 +11,7 @@
       pkgs.keepassxc
       pkgs.zed-editor
       pkgs.veracrypt
+      pkgs.qbittorrent
 
       # Games
       pkgs.prismlauncher
