@@ -124,6 +124,20 @@
       http.enable = true;
       httpProxy.enable = true;
       socksProxy.enable = true;
+
+      sam = {
+        enable = true;
+        address = "127.0.0.1";
+        port = 7655;
+      };
+
+      i2cp = {
+        enable = true;
+        address = "127.0.0.1";
+        port = 7654;
+      };
+
+      i2pControl.enable = true;
     };
   };
 
