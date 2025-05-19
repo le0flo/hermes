@@ -7,7 +7,7 @@
     username = "leo";
     homeDirectory = "/home/leo";
     packages = [
-      pkgs.firefox
+      pkgs.librewolf
       pkgs.keepassxc
       pkgs.zed-editor
       pkgs.veracrypt
