@@ -108,10 +108,14 @@
   services.flatpak.enable = true;
   services.power-profiles-daemon.enable = true;
 
-  # Mullvad VPN
-  services.mullvad-vpn = {
+  # SSH
+  services.openssh = {
     enable = true;
-    package = pkgs.mullvad-vpn;
+
+    settings = {
+      PermitRootLogin = "no";
+      PasswordAuthentication = false;
+    };
   };
 
   # I2P
@@ -136,28 +140,13 @@
         address = "127.0.0.1";
         port = 7654;
       };
-
-      i2pControl.enable = true;
     };
   };
 
-  # Syncthing
-  services.syncthing = {
+  # Mullvad VPN
+  services.mullvad-vpn = {
     enable = true;
-    user = "leo";
-
-    dataDir = "/home/leo";
-    configDir = "/home/leo/.config/syncthing";
-  };
-
-  # SSH
-  services.openssh = {
-    enable = true;
-
-    settings = {
-      PermitRootLogin = "no";
-      PasswordAuthentication = false;
-    };
+    package = pkgs.mullvad-vpn;
   };
 
   # Virtualization
@@ -236,7 +225,7 @@
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = {
-      leo = import ../home-manager/home.nix;
+      leo = import ../home-manager/leo.nix;
     };
   };
 
