@@ -78,6 +78,10 @@
         "desktop" = {
           id = "ZHIS4NJ-VETYFQF-MSYRX5T-OG7RYDJ-UKIDPRH-FZMJSQY-QFOMUGF-MT4XTAZ";
         };
+
+        "colosso" = {
+          id = "Y5WZKVK-HZZXXNY-LMC7JO2-6OEXP4Z-MKFIKFR-2RUDXWP-52CSDEH-XBGPUAB";
+        };
       };
 
       folders = {
