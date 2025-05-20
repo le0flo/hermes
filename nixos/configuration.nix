@@ -173,6 +173,7 @@
     curl
     neovim
     fastfetch
+    exfat
   ];
 
   # Shell
