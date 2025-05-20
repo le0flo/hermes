@@ -89,7 +89,7 @@
         "~/Sync" = {
           id = "private-sync";
           label = "Sync";
-          devices = [ "nettuno" "desktop" ];
+          devices = [ "nettuno" "desktop" "colosso" ];
         };
       };
     };
