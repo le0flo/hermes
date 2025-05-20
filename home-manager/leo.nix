@@ -44,8 +44,9 @@
     history.size = 10000;
 
     shellAliases = {
-      ll = "ls -la";
+      ll = "ls -al";
       ff = "fastfetch";
+      vim = "nvim";
       update-system = "sudo nixos-rebuild switch --flake ~/git/hermes";
     };
 
