@@ -47,6 +47,11 @@
 
     history.size = 10000;
 
+    oh-my-zsh = {
+      enable = true;
+      theme = "af-magic";
+    };
+
     shellAliases = {
       ll = "ls -al";
       ff = "fastfetch";
