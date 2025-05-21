@@ -14,7 +14,6 @@
       # Utilities
       pkgs.fastfetch
       pkgs.zed-editor
-      pkgs.rsync
       pkgs.keepassxc
       pkgs.veracrypt
 
@@ -72,37 +71,6 @@
         autoload -U colors
         colors
     '';
-  };
-
-  # Syncthing
-  services.syncthing = {
-    enable = true;
-    overrideDevices = true;
-    overrideFolders = true;
-
-    settings = {
-      devices = {
-        "nettuno" = {
-          id = "HMT23O5-2XFW3ZJ-LJSUSYF-4H3YA4V-Y2SFTTB-OVVUJKQ-NN72WJM-UXGRZAB";
-        };
-
-        "desktop" = {
-          id = "ZHIS4NJ-VETYFQF-MSYRX5T-OG7RYDJ-UKIDPRH-FZMJSQY-QFOMUGF-MT4XTAZ";
-        };
-
-        "colosso" = {
-          id = "Y5WZKVK-HZZXXNY-LMC7JO2-6OEXP4Z-MKFIKFR-2RUDXWP-52CSDEH-XBGPUAB";
-        };
-      };
-
-      folders = {
-        "~/Sync" = {
-          id = "private-sync";
-          label = "Sync";
-          devices = [ "nettuno" "desktop" "colosso" ];
-        };
-      };
-    };
   };
 
   home.stateVersion = "24.11";
