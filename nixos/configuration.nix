@@ -115,6 +115,8 @@
     settings = {
       PermitRootLogin = "no";
       PasswordAuthentication = false;
+      UsePAM = false;
+      PrintMotd = false;
     };
   };
 
