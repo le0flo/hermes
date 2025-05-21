@@ -172,7 +172,6 @@
     wget
     curl
     neovim
-    fastfetch
     exfat
   ];
 

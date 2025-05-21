@@ -26,6 +26,10 @@
       pkgs.texliveBasic
       pkgs.nil
       pkgs.nixd
+
+      # Utilities
+      pkgs.fastfetch
+      pkgs.rsync
     ];
   };
 
