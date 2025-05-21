@@ -7,11 +7,16 @@
     username = "leo";
     homeDirectory = "/home/leo";
     packages = [
+      # Web
       pkgs.librewolf
-      pkgs.keepassxc
-      pkgs.zed-editor
-      pkgs.veracrypt
       pkgs.qbittorrent
+
+      # Utilities
+      pkgs.fastfetch
+      pkgs.zed-editor
+      pkgs.rsync
+      pkgs.keepassxc
+      pkgs.veracrypt
 
       # Games
       pkgs.prismlauncher
@@ -26,10 +31,6 @@
       pkgs.texliveBasic
       pkgs.nil
       pkgs.nixd
-
-      # Utilities
-      pkgs.fastfetch
-      pkgs.rsync
     ];
   };
 
