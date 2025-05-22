@@ -179,6 +179,11 @@
     exfat
     git
 
+    # Wine
+    wine
+    wine64
+    winetricks
+
     # Editors
     zed-editor
     neovim
