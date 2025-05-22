@@ -171,10 +171,34 @@
     vlc
 
     # Utilities
+    fastfetch
+    keepassxc
+    veracrypt
     wget
     curl
-    neovim
     exfat
+
+    # Editors
+    zed-editor
+    neovim
+
+    # Web
+    librewolf
+    qbittorrent
+
+    # Games
+    prismlauncher
+    heroic
+
+    # Languages
+    gcc
+    temurin-bin
+    python314
+    rustup
+    nodePackages.nodejs
+    texliveBasic
+    nil
+    nixd
   ];
 
   # Shell
