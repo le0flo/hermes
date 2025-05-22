@@ -200,6 +200,7 @@
     texliveBasic
     nil
     nixd
+    hugo
   ];
 
   # Shell
