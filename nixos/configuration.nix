@@ -197,7 +197,7 @@
     python314
     rustup
     nodePackages.nodejs
-    texliveBasic
+    texliveFull
     nil
     nixd
     hugo
