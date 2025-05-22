@@ -6,6 +6,7 @@
   home = {
     username = "leo";
     homeDirectory = "/home/leo";
+
     packages = [
       # Web
       pkgs.librewolf
@@ -31,6 +32,10 @@
       pkgs.nil
       pkgs.nixd
     ];
+
+    sessionVariables = {
+      PATH = "$PATH:$HOME/.local/bin";
+    };
   };
 
   programs.home-manager.enable = true;
@@ -57,6 +62,7 @@
       ff = "fastfetch";
       vim = "nvim";
       update-system = "sudo nixos-rebuild switch --flake ~/git/hermes";
+      npmg = "npm -g --prefix \"$HOME/.local\"";
     };
 
     initContent = ''
