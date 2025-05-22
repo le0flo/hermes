@@ -14,9 +14,6 @@
 
   programs.home-manager.enable = true;
 
-  # Git
-  programs.git.enable = true;
-
   # Shell
   programs.zsh = {
     enable = true;
