@@ -177,6 +177,7 @@
     wget
     curl
     exfat
+    git
 
     # Editors
     zed-editor
