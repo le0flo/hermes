@@ -1,4 +1,4 @@
-{ pkgs,...}: {
+{ ...}: {
   nixpkgs = {
     config.allowUnfree = true;
   };
@@ -6,32 +6,6 @@
   home = {
     username = "leo";
     homeDirectory = "/home/leo";
-
-    packages = [
-      # Web
-      pkgs.librewolf
-      pkgs.qbittorrent
-
-      # Utilities
-      pkgs.fastfetch
-      pkgs.zed-editor
-      pkgs.keepassxc
-      pkgs.veracrypt
-
-      # Games
-      pkgs.prismlauncher
-      pkgs.heroic
-
-      # Languages
-      pkgs.gcc
-      pkgs.temurin-bin
-      pkgs.python314
-      pkgs.rustup
-      pkgs.nodePackages.nodejs
-      pkgs.texliveBasic
-      pkgs.nil
-      pkgs.nixd
-    ];
 
     sessionVariables = {
       PATH = "$PATH:$HOME/.local/bin";
