@@ -164,6 +164,7 @@
     fastfetch
     keepassxc
     veracrypt
+    htop
     wget
     curl
     exfat
