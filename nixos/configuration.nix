@@ -64,10 +64,10 @@
 
   # User space
   import = [
-    ./plasma.nix
-    ./services.nix
-    ./packages.nix
-  ] { inherit pkgs; };
+    ./plasma.nix { inherit pkgs; }
+    ./services.nix { inherit pkgs; }
+    ./packages.nix { inherit pkgs; }
+  ];
 
   # Users
   users.users.leo = {
