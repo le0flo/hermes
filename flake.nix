@@ -9,9 +9,10 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     hyprland.url = "github:hyprwm/Hyprland";
+    hyprlock.url = "github:hyprwm/hyprlock";
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, home-manager, hyprland }@inputs:
+  outputs = { self, nixpkgs, nixos-hardware, home-manager, hyprland, hyprlock }@inputs:
   let
     system = "x86_64-linux";
   in {
