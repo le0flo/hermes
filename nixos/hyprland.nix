@@ -1,7 +1,4 @@
 { inputs, pkgs, ... }: {
-  # X11
-  services.xserver.enable = false;
-
   # UWSM
   programs.uwsm.enable = true;
 
@@ -17,7 +14,7 @@
   # Hyprlock
   programs.hyprlock = {
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprlock;
+    package = inputs.hyprlock.packages.${pkgs.stdenv.hostPlatform.system}.hyprlock;
   };
 
   # Portals

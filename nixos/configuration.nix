@@ -5,6 +5,7 @@
     inputs.home-manager.nixosModules.home-manager
 
     (import ./plasma.nix { inherit pkgs; })
+    (import ./hyprland.nix { inherit inputs pkgs; })
     (import ./services.nix { inherit pkgs; })
     (import ./packages.nix { inherit pkgs; })
   ];
@@ -64,6 +65,15 @@
     LC_PAPER = "it_IT.UTF-8";
     LC_TELEPHONE = "it_IT.UTF-8";
     LC_TIME = "it_IT.UTF-8";
+  };
+
+  # X11
+  services.xserver = {
+    enable = false;
+    xkb = {
+        layout = "it";
+        variant = "";
+    };
   };
 
   # Users

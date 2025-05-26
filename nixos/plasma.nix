@@ -1,7 +1,4 @@
 { pkgs, ... }: {
-  # X11
-  services.xserver.enable = false;
-
   # SDDM
   services.displayManager.sddm = {
     enable = true;

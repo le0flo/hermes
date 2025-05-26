@@ -4,10 +4,6 @@
   services.flatpak.enable = true;
   services.power-profiles-daemon.enable = true;
 
-  # Security
-  security.rtkit.enable = true;
-  security.polkit.enable = true;
-
   # Audio
   services.pulseaudio.enable = false;
   services.pipewire = {
@@ -56,4 +52,8 @@
     libvirtd.enable = true;
     spiceUSBRedirection.enable = true;
   };
+
+  # Security
+  security.rtkit.enable = true;
+  security.polkit.enable = true;
 }
