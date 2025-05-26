@@ -24,7 +24,6 @@
     # Wine
     wine
     wine64
-    winetricks
 
     # Editors
     zed-editor
