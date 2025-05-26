@@ -15,7 +15,7 @@
     theme = "breeze";
   };
 
-  # KDE Plasma
+  # Plasma
   services.desktopManager.plasma6.enable = true;
   environment.plasma6.excludePackages = [
     pkgs.xterm
@@ -29,13 +29,4 @@
   xdg.portal.extraPortals = [
     pkgs.xdg-desktop-portal-gtk
   ];
-
-  # Audio
-  services.pulseaudio.enable = false;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
 }

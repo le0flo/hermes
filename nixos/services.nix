@@ -4,6 +4,15 @@
   services.flatpak.enable = true;
   services.power-profiles-daemon.enable = true;
 
+  # Audio
+  services.pulseaudio.enable = false;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
+
   # SSH
   services.openssh = {
     enable = true;
