@@ -1,6 +1,9 @@
 { inputs, config, pkgs, ... }: {
   imports = [
     ./hardware-configuration.nix
+    ./plasma.nix
+    ./packages.nix
+    ./services.nix
     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-l14-intel
     inputs.home-manager.nixosModules.home-manager
   ];
@@ -64,177 +67,6 @@
   security.rtkit.enable = true;
   security.polkit.enable = true;
 
-  # X11
-  services.xserver = {
-    enable = false;
-    xkb = {
-      layout = "it";
-      variant = "";
-    };
-  };
-
-  # SDDM
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-    theme = "breeze";
-  };
-
-  # KDE Plasma
-  services.desktopManager.plasma6.enable = true;
-  environment.plasma6.excludePackages = [
-    pkgs.xterm
-    pkgs.kdePackages.elisa
-    pkgs.kdePackages.xwaylandvideobridge
-    pkgs.kdePackages.plasma-browser-integration
-  ];
-
-  # Portals
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [
-    pkgs.xdg-desktop-portal-gtk
-  ];
-
-  # Audio
-  services.pulseaudio.enable = false;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
-
-  # Services
-  services.printing.enable = true;
-  services.libinput.enable = true;
-  services.flatpak.enable = true;
-  services.power-profiles-daemon.enable = true;
-
-  # SSH
-  services.openssh = {
-    enable = true;
-
-    settings = {
-      PermitRootLogin = "no";
-      PasswordAuthentication = false;
-      UsePAM = false;
-      PrintMotd = false;
-    };
-  };
-
-  # I2P
-  services.i2pd = {
-    enable = true;
-    address = "127.0.0.1";
-    port = 4444;
-
-    proto = {
-      http.enable = true;
-      httpProxy.enable = true;
-      socksProxy.enable = true;
-      sam.enable = true;
-      i2cp.enable = true;
-    };
-  };
-
-  # Mullvad VPN
-  services.mullvad-vpn = {
-    enable = true;
-    package = pkgs.mullvad-vpn;
-  };
-
-  # Virtualization
-  virtualisation = {
-    docker.enable = true;
-    libvirtd.enable = true;
-    spiceUSBRedirection.enable = true;
-  };
-
-  # Packages
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nixpkgs.config.allowUnfree = true;
-
-  environment.systemPackages = with pkgs; [
-    # KDE
-    kdePackages.kate
-    kdePackages.discover
-    kdePackages.filelight
-    networkmanagerapplet
-    vlc
-
-    # Utilities
-    fastfetch
-    keepassxc
-    veracrypt
-    htop
-    wget
-    curl
-    exfat
-    git
-
-    # Wine
-    wine
-    wine64
-    winetricks
-
-    # Editors
-    zed-editor
-    neovim
-
-    # Web
-    librewolf
-    qbittorrent
-
-    # Games
-    prismlauncher
-    heroic
-
-    # Languages
-    gcc
-    temurin-bin
-    python314
-    rustup
-    nodePackages.nodejs
-    texliveFull
-    nil
-    nixd
-    hugo
-  ];
-
-  # Dynamic linking
-  programs.nix-ld.enable = true;
-
-  # Shell
-  programs.zsh.enable = true;
-
-  # GPG
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-  };
-
-  # Steam
-  hardware.steam-hardware.enable = true;
-  programs.gamescope.enable = true;
-  programs.gamemode.enable = true;
-  programs.steam = {
-    enable = true;
-    gamescopeSession.enable = true;
-  };
-
-  # Virt Manager
-  programs.virt-manager.enable = true;
-
-  # OBS
-  programs.obs-studio = {
-    enable = true;
-    enableVirtualCamera = true;
-
-    plugins = [
-      pkgs.obs-studio-plugins.droidcam-obs
-    ];
-  };
-
   # Users
   users.users.leo = {
     isNormalUser = true;
@@ -251,6 +83,7 @@
     ];
   };
 
+  # Home manager
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = {
@@ -258,5 +91,6 @@
     };
   };
 
+  # Version
   system.stateVersion = "25.05";
 }
