@@ -198,6 +198,9 @@
     hugo
   ];
 
+  # Dynamic linking
+  programs.nix-ld.enable = true;
+
   # Shell
   programs.zsh.enable = true;
 
