@@ -6,9 +6,8 @@
   ];
 
   boot = {
-    consoleLogLevel = 3;
-
     initrd.verbose = false;
+
     kernelParams = [
       "quiet"
       "splash"
@@ -16,12 +15,12 @@
       "boot.shell_on_fail"
     ];
 
-    supportedFilesystems = [ "ntfs" ];
-
     extraModulePackages = with config.boot.kernelPackages; [
       v4l2loopback
     ];
 
+    consoleLogLevel = 3;
+    supportedFilesystems = [ "ntfs" ];
     extraModprobeConfig = "options v4l2loopback devices=1 video_nr=1 card_label=\"OBS Cam\" exclusive_caps=1";
 
     plymouth = {
@@ -253,5 +252,5 @@
     };
   };
 
-  system.stateVersion = "24.11";
+  system.stateVersion = "25.05";
 }
