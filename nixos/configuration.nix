@@ -91,6 +91,9 @@
 
   # Portals
   xdg.portal.enable = true;
+  xdg.portal.extraPortals = [
+    pkgs.xdg-desktop-portal-gtk
+  ];
 
   # Audio
   services.pulseaudio.enable = false;
