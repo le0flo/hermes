@@ -1,7 +1,6 @@
 { pkgs, ... }: {
   # NixOS
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nixpkgs.config.allowUnfree = true;
 
   # System packages
   environment.systemPackages = with pkgs; [

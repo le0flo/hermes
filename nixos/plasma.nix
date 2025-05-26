@@ -1,12 +1,6 @@
 { pkgs, ... }: {
   # X11
-  services.xserver = {
-    enable = false;
-    xkb = {
-      layout = "it";
-      variant = "";
-    };
-  };
+  services.xserver.enable = false;
 
   # SDDM
   services.displayManager.sddm = {

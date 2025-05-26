@@ -1,12 +1,11 @@
 { inputs, config, pkgs, ... }: {
   imports = [
     ./hardware-configuration.nix
-    ./plasma.nix
-    ./services.nix
-    ./packages.nix
     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-l14-intel
     inputs.home-manager.nixosModules.home-manager
   ];
+
+  nixpkgs.config.allowUnfree = true;
 
   boot = {
     initrd.verbose = false;
@@ -63,9 +62,12 @@
     LC_TIME = "it_IT.UTF-8";
   };
 
-  # Security
-  security.rtkit.enable = true;
-  security.polkit.enable = true;
+  # User space
+  import = [
+    ./plasma.nix
+    ./services.nix
+    ./packages.nix
+  ] { inherit pkgs; };
 
   # Users
   users.users.leo = {
