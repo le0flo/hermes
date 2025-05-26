@@ -2,8 +2,8 @@
   imports = [
     ./hardware-configuration.nix
     ./plasma.nix
-    ./packages.nix
     ./services.nix
+    ./packages.nix
     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-l14-intel
     inputs.home-manager.nixosModules.home-manager
   ];
