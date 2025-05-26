@@ -1,8 +1,4 @@
-{ ...}: {
-  nixpkgs = {
-    config.allowUnfree = true;
-  };
-
+{ ... }: {
   home = {
     username = "leo";
     homeDirectory = "/home/leo";
@@ -12,6 +8,7 @@
     };
   };
 
+  # Home manager
   programs.home-manager.enable = true;
 
   # Shell
@@ -50,5 +47,6 @@
     '';
   };
 
+  # Version
   home.stateVersion = "25.05";
 }
