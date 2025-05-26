@@ -3,6 +3,10 @@
     ./hardware-configuration.nix
     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-l14-intel
     inputs.home-manager.nixosModules.home-manager
+
+    (import ./plasma.nix { inherit pkgs; })
+    (import ./services.nix { inherit pkgs; })
+    (import ./packages.nix { inherit pkgs; })
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -61,13 +65,6 @@
     LC_TELEPHONE = "it_IT.UTF-8";
     LC_TIME = "it_IT.UTF-8";
   };
-
-  # User space
-  import = [
-    ./plasma.nix { inherit pkgs; }
-    ./services.nix { inherit pkgs; }
-    ./packages.nix { inherit pkgs; }
-  ];
 
   # Users
   users.users.leo = {
