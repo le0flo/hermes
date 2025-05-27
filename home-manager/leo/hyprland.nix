@@ -6,8 +6,11 @@ in {
     enable = true;
     package = hyprlandPackages.hyprland;
 
-    systemd.enable = true;
-    systemd.variables = [ "--all" ];
+    systemd = {
+      enable = true;
+      enableXdgAutostart = true;
+      variables = [ "--all" ];
+    };
 
     settings = {
       # Programs
@@ -16,7 +19,7 @@ in {
       "$menu" = "bemenu-run -c -l 10 -W .5";
 
       # Monitor
-      monitor=",preferred,auto,auto";
+      monitor="eDP-1,1920x1080@60,0x0,1";
 
       # Environment
       env = [
