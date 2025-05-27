@@ -1,6 +1,6 @@
-{ pkgs, lib, config, ... }: {
+{pkgs, lib, config, ...}: {
   options = {
-    plasma.enable = lib.mkEnableOption "Enables the KDE Plasma 6 desktop environment";
+    plasma.enable = lib.mkEnableOption "Enables Plasma 6";
   };
 
   config = lib.mkIf config.plasma.enable {
@@ -10,11 +10,6 @@
       elisa
       xwaylandvideobridge
       plasma-browser-integration
-    ];
-
-    # Portals
-    xdg.portal.extraPortals = with pkgs.kdePackages; [
-      xdg-desktop-portal-kde
     ];
 
     # Packages

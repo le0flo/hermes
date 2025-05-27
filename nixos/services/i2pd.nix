@@ -1,4 +1,4 @@
-{ lib, config, ... }: {
+{lib, config, ...}: {
   options = {
     i2pd.enable = lib.mkEnableOption "Enables the i2pd router";
   };

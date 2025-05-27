@@ -9,18 +9,30 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     hyprland.url = "github:hyprwm/Hyprland";
-    hyprlock.url = "github:hyprwm/hyprlock";
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, home-manager, hyprland, hyprlock }@inputs:
+  outputs = {self, nixpkgs, nixos-hardware, home-manager, hyprland} @ inputs:
   let
     system = "x86_64-linux";
   in {
     nixosConfigurations."hermes" = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs system; };
+      specialArgs = {
+        inherit inputs system;
+      };
 
       modules = [
         ./nixos/configuration.nix
+      ];
+    };
+
+    homeConfigurations."leo" = home-manager.lib.homeManagerConfiguration {
+      extraSpecialArgs = {
+        inherit inputs;
+      };
+
+      pkgs = nixpkgs.legacyPackages.${system};
+      modules = [
+        ./home-manager/leo/home-configuration.nix
       ];
     };
   };

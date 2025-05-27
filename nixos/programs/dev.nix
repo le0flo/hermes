@@ -1,6 +1,6 @@
-{ pkgs, lib, config, ... }: {
+{pkgs, lib, config, ...}: {
   options = {
-    dev.enable = lib.mkEnableOption "Adds some development tools";
+    dev.enable = lib.mkEnableOption "Enables development tools";
   };
 
   config = lib.mkIf config.dev.enable {
@@ -18,6 +18,17 @@
       hugo
     ];
 
-    programs.git.enable = true;
+    programs.git = {
+      enable = true;
+      config = {
+        init = {
+          defaultBranch = "main";
+        };
+
+        core = {
+          editor = "nvim";
+        };
+      };
+    };
   };
 }

@@ -1,10 +1,11 @@
-{ pkgs, lib, config, ... }: {
+{pkgs, lib, config, ...}: {
   options = {
-    utilities.enable = lib.mkEnableOption "Enables base system utilities";
+    utilities.enable = lib.mkEnableOption "Enables various utilities";
   };
 
   config = lib.mkIf config.utilities.enable {
     environment.systemPackages = with pkgs; [
+      home-manager
       fastfetch
       curl
       exfat

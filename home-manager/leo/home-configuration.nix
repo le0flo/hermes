@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   imports = [
     ./hyprland.nix
   ];
@@ -11,9 +11,6 @@
       PATH = "$PATH:$HOME/.local/bin";
     };
   };
-
-  # Home manager
-  programs.home-manager.enable = true;
 
   # Shell
   programs.zsh = {
@@ -34,6 +31,7 @@
       ff = "fastfetch";
       vim = "nvim";
       update-system = "sudo nixos-rebuild switch --flake ~/git/hermes";
+      update-home = "home-manager switch --flake ~/git/hermes";
       npmg = "npm -g --prefix \"$HOME/.local\"";
     };
 

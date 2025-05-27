@@ -1,10 +1,10 @@
-{ inputs, config, pkgs, ... }: {
+{inputs, config, pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-l14-intel
     inputs.home-manager.nixosModules.home-manager
 
-    ./display/manager.nix
+    ./display/bundle.nix
     ./services/bundle.nix
     ./programs/bundle.nix
   ];
@@ -78,14 +78,6 @@
       "dialout"
       "tty"
     ];
-  };
-
-  # Home manager
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    users = {
-      leo = import ../home-manager/leo/home-configuration.nix;
-    };
   };
 
   # Version

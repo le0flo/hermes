@@ -1,6 +1,6 @@
-{ pkgs, lib, config, ... }: {
+{pkgs, lib, config, ...}: {
   options = {
-    games.enable = lib.mkEnableOption "Enables the Steam client and Session, PrismLauncher and Heroic Games Launcher";
+    games.enable = lib.mkEnableOption "Enables Steam and other game launchers";
   };
 
   config = lib.mkIf config.games.enable {
