@@ -26,11 +26,15 @@
   # Portals
   xdg.portal = {
     enable = true;
+    xdgOpenUsePortal = true;
+
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
+      xdg-desktop-portal-gnome
     ];
   };
 
+  # Desktop enviroments
   plasma.enable = true;
   hyprland.enable = true;
 }
