@@ -18,9 +18,6 @@ in {
       "$fileManager" = "alacritty -e lf";
       "$menu" = "bemenu-run -c -l 10 -W .5";
 
-      # Monitor
-      monitor="eDP-1,1920x1080@60,0x0,1";
-
       # Environment
       env = [
         "XCURSOR_SIZE,24"
@@ -101,13 +98,16 @@ in {
         follow_mouse = 1;
         sensitivity = 0;
         touchpad = {
-          natural_scroll = false;
+          natural_scroll = true;
         };
       };
 
       gestures = {
-        workspace_swipe = false;
+        workspace_swipe = true;
       };
+
+      # Monitor
+      monitor="eDP-1,1920x1080@60,0x0,1";
 
       # Appearance
       general = {
@@ -200,9 +200,7 @@ in {
       };
 
       permission = [
-        #"/usr/(bin|local/bin)/grim, screencopy, allow"
-        #"/usr/(lib|libexec|lib64)/xdg-desktop-portal-hyprland, screencopy, allow"
-        #"/usr/(bin|local/bin)/hyprpm, plugin, allow"
+        "${hyprlandPackages.xdg-desktop-portal-hyprland}/libexec/xdg-desktop-portal-hyprland, screencopy, allow"
       ];
     };
   };
