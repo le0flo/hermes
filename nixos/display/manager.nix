@@ -1,4 +1,9 @@
-{ ... }: {
+{ pkgs, ... }: {
+  imports = [
+    ./plasma.nix
+    ./hyprland.nix
+  ];
+
   # X11
   services.xserver = {
     enable = false;
@@ -18,8 +23,9 @@
     theme = "breeze";
   };
 
-  imports = [
-    ./plasma.nix
-    ./hyprland.nix
+  # Portals
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = with pkgs; [
+    xdg-desktop-portal-gtk
   ];
 }

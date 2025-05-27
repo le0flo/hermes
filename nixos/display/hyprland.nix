@@ -19,12 +19,6 @@
       package = inputs.hyprlock.packages.${pkgs.stdenv.hostPlatform.system}.hyprlock;
     };
 
-    # Portals
-    xdg.portal.enable = true;
-    xdg.portal.extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-    ];
-
     # Packages
     environment.systemPackages = with pkgs; [
       alacritty
