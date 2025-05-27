@@ -11,10 +11,11 @@
   security.polkit.enable = true;
 
   # Base
-  services.printing.enable = true;
+  services.dbus.enable = true;
   services.libinput.enable = true;
-  services.flatpak.enable = true;
   services.power-profiles-daemon.enable = true;
+  services.flatpak.enable = true;
+  services.printing.enable = true;
 
   # Custom
   audio.enable = true;
