@@ -18,7 +18,7 @@
   utilities.enable = true;
 
   # Work
-  dev.enablue = true;
+  dev.enable = true;
   virtual-machines.enable = true;
 
   # Casual

@@ -18,7 +18,7 @@
     theme = "breeze";
   };
 
-  import = [
+  imports = [
     ./plasma.nix
     ./hyprland.nix
   ];
