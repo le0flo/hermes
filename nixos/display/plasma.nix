@@ -12,12 +12,16 @@
       plasma-browser-integration
     ];
 
+    # Portals
+    xdg.portal.extraPortals = with pkgs.kdePackages; [
+      xdg-desktop-portal-kde
+    ];
+
     # Packages
     environment.systemPackages = with pkgs.kdePackages; [
       kate
       filelight
       discover
-      xdg-desktop-portal-kde
     ];
   };
 }
