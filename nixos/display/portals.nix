@@ -10,7 +10,7 @@ in {
       kde."org.freedesktop.portal.FileChooser" = [ "kde" ];
       kde."org.freedesktop.portal.OpenURI" = [ "kde" ];
 
-      hyprland.default = [ "hyprland" "gtk" "termfilechooser" ];
+      hyprland.default = [ "hyprland" "gtk" "gnome" "termfilechooser" ];
       hyprland."org.freedesktop.portal.FileChooser" = [ "termfilechooser" ];
       hyprland."org.freedesktop.portal.OpenURI" = [ "termfilechooser" ];
     };
