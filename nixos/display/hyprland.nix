@@ -1,4 +1,8 @@
-{ inputs, pkgs, lib, config, ... }: {
+{ inputs, pkgs, lib, config, ... }:
+let
+  hyprlandPackages = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
+  hyprlockPackages = inputs.hyprlock.packages.${pkgs.stdenv.hostPlatform.system};
+in {
   options = {
     hyprland.enable = lib.mkEnableOption "Enables the Hyprland window manager";
   };
@@ -9,14 +13,14 @@
       enable = true;
       withUWSM = true;
 
-      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-      portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+      package = hyprlandPackages.hyprland;
+      portalPackage = hyprlandPackages.xdg-desktop-portal-hyprland;
     };
 
     # Hyprlock
     programs.hyprlock = {
       enable = true;
-      package = inputs.hyprlock.packages.${pkgs.stdenv.hostPlatform.system}.hyprlock;
+      package = hyprlockPackages.hyprlock;
     };
 
     # Packages

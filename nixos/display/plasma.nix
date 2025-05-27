@@ -6,18 +6,18 @@
   config = lib.mkIf config.plasma.enable {
     # Plasma
     services.desktopManager.plasma6.enable = true;
-    environment.plasma6.excludePackages = with pkgs; [
-      xterm
-      kdePackages.elisa
-      kdePackages.xwaylandvideobridge
-      kdePackages.plasma-browser-integration
+    environment.plasma6.excludePackages = with pkgs.kdePackages; [
+      elisa
+      xwaylandvideobridge
+      plasma-browser-integration
     ];
 
     # Packages
-    environment.systemPackages = with pkgs; [
-      kdePackages.kate
-      kdePackages.filelight
-      kdePackages.discover
+    environment.systemPackages = with pkgs.kdePackages; [
+      kate
+      filelight
+      discover
+      xdg-desktop-portal-kde
     ];
   };
 }
