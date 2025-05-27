@@ -8,9 +8,11 @@ in {
     config = {
       kde.default = [ "kde" "gtk" "gnome" ];
       kde."org.freedesktop.portal.FileChooser" = [ "kde" ];
+      kde."org.freedesktop.portal.OpenURI" = [ "kde" ];
 
       hyprland.default = [ "hyprland" "gtk" "termfilechooser" ];
       hyprland."org.freedesktop.portal.FileChooser" = [ "termfilechooser" ];
+      hyprland."org.freedesktop.portal.OpenURI" = [ "termfilechooser" ];
     };
 
     extraPortals = [
