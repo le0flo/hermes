@@ -17,4 +17,9 @@
     wayland.enable = true;
     theme = "breeze";
   };
+
+  import = [
+    ./plasma.nix
+    ./hyprland.nix
+  ];
 }
