@@ -1,10 +1,9 @@
-{ inputs, pkgs, lib, config, ... }:
+{inputs, pkgs, lib, config, ...}:
 let
   hyprlandPackages = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
-  hyprlockPackages = inputs.hyprlock.packages.${pkgs.stdenv.hostPlatform.system};
 in {
   options = {
-    hyprland.enable = lib.mkEnableOption "Enables the Hyprland window manager";
+    hyprland.enable = lib.mkEnableOption "Enables Hyprland";
   };
 
   config = lib.mkIf config.hyprland.enable {
@@ -18,15 +17,14 @@ in {
     };
 
     # Hyprlock
-    programs.hyprlock = {
-      enable = true;
-      package = hyprlockPackages.hyprlock;
-    };
+    programs.hyprlock.enable = true;
 
     # Packages
     environment.systemPackages = with pkgs; [
+      hypridle
       alacritty
       bemenu
+      lf
     ];
   };
 }
