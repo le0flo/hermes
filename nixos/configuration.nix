@@ -4,14 +4,10 @@
     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-l14-intel
     inputs.home-manager.nixosModules.home-manager
 
-    (import ./display-manager.nix)
-    (import ./plasma.nix { inherit pkgs; })
-    (import ./hyprland.nix { inherit inputs pkgs; })
-    (import ./services.nix { inherit pkgs; })
-    (import ./packages.nix { inherit pkgs; })
+    ./display/manager.nix
+    ./services/bundle.nix
+    ./programs/bundle.nix
   ];
-
-  nixpkgs.config.allowUnfree = true;
 
   boot = {
     initrd.verbose = false;
