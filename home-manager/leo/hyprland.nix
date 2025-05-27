@@ -1,4 +1,5 @@
 { ... }: {
+  wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.settings = {
     "$terminal" = "alacritty";
     "$fileManager" = "dolphin";
