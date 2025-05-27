@@ -12,7 +12,7 @@ in {
     settings = {
       # Programs
       "$terminal" = "alacritty";
-      "$fileManager" = "lf";
+      "$fileManager" = "alacritty -e lf";
       "$menu" = "bemenu-run -c -l 10 -W .5";
 
       # Monitor
@@ -28,14 +28,16 @@ in {
       "$mainMod" = "SUPER";
 
       bind = [
-        "$mainMod, Q, exec, $terminal"
-        "$mainMod, C, killactive,"
-        "$mainMod, M, exit,"
+        "$mainMod SHIFT, Return, exec, $terminal"
+        "$mainMod SHIFT, K, killactive,"
+        "$mainMod SHIFT, Q, exit,"
+
         "$mainMod, E, exec, $fileManager"
-        "$mainMod, V, togglefloating,"
-        "$mainMod, R, exec, $menu"
-        "$mainMod, P, pseudo, # dwindle"
-        "$mainMod, J, togglesplit, # dwindle"
+        "$mainMod, P, exec, $menu"
+
+        "$mainMod SHIFT, V, togglefloating,"
+        "$mainMod SHIFT, P, pseudo,"
+        "$mainMod SHIFT, J, togglesplit,"
 
         "$mainMod, left, movefocus, l"
         "$mainMod, right, movefocus, r"
@@ -155,7 +157,7 @@ in {
           "quick,0.15,0,0.1,1"
         ];
 
-        animations = [
+        animation = [
           "global, 1, 10, default"
           "border, 1, 5.39, easeOutQuint"
           "windows, 1, 4.79, easeOutQuint"
