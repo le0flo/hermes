@@ -16,12 +16,8 @@ in {
       portalPackage = hyprlandPackages.xdg-desktop-portal-hyprland;
     };
 
-    # Hyprlock
-    programs.hyprlock.enable = true;
-
     # Packages
     environment.systemPackages = with pkgs; [
-      hypridle
       alacritty
       bemenu
       lf
