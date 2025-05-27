@@ -12,7 +12,6 @@
       vlc
 
       # Wine
-      wine
       wine64
 
       # Web
