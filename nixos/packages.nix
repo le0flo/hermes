@@ -8,18 +8,21 @@
     kdePackages.kate
     kdePackages.discover
     kdePackages.filelight
-    networkmanagerapplet
-    vlc
+
+    # Hyprland
+    bemenu
+    alacritty
 
     # Utilities
     fastfetch
     keepassxc
-    veracrypt
-    htop
-    wget
     curl
     exfat
     git
+    networkmanagerapplet
+    veracrypt
+    vlc
+    htop
 
     # Wine
     wine

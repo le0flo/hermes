@@ -88,7 +88,7 @@
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = {
-      leo = import ../home-manager/leo.nix;
+      leo = import ../home-manager/leo/home-configuration.nix;
     };
   };
 
