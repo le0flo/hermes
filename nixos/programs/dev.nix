@@ -19,7 +19,6 @@
       python314
       nodePackages.nodejs
       texliveBasic
-      hugo
 
       # Nix
       nil

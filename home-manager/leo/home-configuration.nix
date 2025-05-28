@@ -16,7 +16,7 @@
 
   zsh.enable = true;
   alacritty.enable = true;
-  hyprland.enable = true;
+  hyprland.enable = false;
 
   # Version
   home.stateVersion = "25.05";
