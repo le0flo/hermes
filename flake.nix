@@ -2,38 +2,28 @@
   description = "Hermes's configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixos-hardware.url = "github:nixos/nixos-hardware/master";
+    home-manager.url = "github:nix-community/home-manager/master";
+    hyprland.url = "github:hyprwm/Hyprland/main";
 
-    home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-    hyprland.url = "github:hyprwm/Hyprland";
   };
 
-  outputs = {self, nixpkgs, nixos-hardware, home-manager, hyprland} @ inputs:
+  outputs = {self, nixpkgs, home-manager, ...} @ inputs:
   let
     system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
   in {
     nixosConfigurations."hermes" = nixpkgs.lib.nixosSystem {
-      specialArgs = {
-        inherit inputs system;
-      };
-
-      modules = [
-        ./nixos/configuration.nix
-      ];
+      specialArgs = { inherit inputs system; };
+      modules = [ ./nixos/configuration.nix ];
     };
 
     homeConfigurations."leo" = home-manager.lib.homeManagerConfiguration {
-      extraSpecialArgs = {
-        inherit inputs;
-      };
-
-      pkgs = nixpkgs.legacyPackages.${system};
-      modules = [
-        ./home-manager/leo/home-configuration.nix
-      ];
+      extraSpecialArgs = { inherit inputs; };
+      pkgs = pkgs;
+      modules = [ ./home-manager/leo/home-configuration.nix ];
     };
   };
 }
