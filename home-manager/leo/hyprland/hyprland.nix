@@ -21,7 +21,7 @@ in {
         # Programs
         "$terminal" = "alacritty";
         "$fileManager" = "alacritty -e lf";
-        "$menu" = "bemenu-run -c -l 10 -W .5";
+        "$menu" = "tofi-drun --drun-launch=true";
 
         # Environment
         env = [

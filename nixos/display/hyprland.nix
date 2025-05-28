@@ -18,8 +18,7 @@ in {
 
     # Packages
     environment.systemPackages = with pkgs; [
-      alacritty
-      bemenu
+      tofi
       lf
       swww
       ncpamixer
