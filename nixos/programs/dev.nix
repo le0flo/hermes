@@ -10,7 +10,6 @@
 
       # Compilers
       gcc
-      cmake
       rustup
 
       # VMs
@@ -20,10 +19,9 @@
       python314
       nodePackages.nodejs
       texliveBasic
-
-      # Other
-      pkg-config
       hugo
+
+      # Nix
       nil
       nixd
     ];
