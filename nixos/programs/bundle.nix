@@ -1,4 +1,4 @@
-{...}: {
+{inputs, pkgs, ...}: {
   imports = [
     ./utilities.nix
     ./dev.nix
@@ -10,6 +10,9 @@
   # NixOS
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  environment.systemPackages = [
+    inputs.home-manager.packages.${pkgs.stdenv.hostPlatform.system}.home-manager
+  ];
 
   # Dynamic linking
   programs.nix-ld.enable = true;

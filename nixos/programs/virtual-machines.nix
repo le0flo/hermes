@@ -1,6 +1,6 @@
 {lib, config, ...}: {
   options = {
-    virtual-machines.enable = lib.mkEnableOption "Enables Virt manager, the QEMU backend and Docker";
+    virtual-machines.enable = lib.mkEnableOption "Enable Virt manager, the QEMU backend and Docker";
   };
 
   config = lib.mkIf config.virtual-machines.enable {

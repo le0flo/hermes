@@ -1,6 +1,6 @@
 {lib, config, ...}: {
   options = {
-    audio.enable = lib.mkEnableOption "Enables the audio backend";
+    audio.enable = lib.mkEnableOption "Enable the audio backend";
   };
 
   config = lib.mkIf config.audio.enable {
