@@ -25,11 +25,6 @@
       keepassxc
     ];
 
-    # Session variables
-    environment.profileRelativeSessionVariables = {
-      TERMINAL = [ "${pkgs.alacritty}/bin/alacritty" ];
-    };
-
     # Neovim
     programs.neovim.enable = true;
 
