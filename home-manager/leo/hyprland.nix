@@ -3,7 +3,7 @@ let
   hyprlandPackages = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
 in {
   options = {
-    hyprland.enable = lib.mkEnableOption "Enables my Hyprland configuration";
+    hyprland.enable = lib.mkEnableOption "Enable my Hyprland configuration";
   };
 
   config = lib.mkIf config.hyprland.enable {
@@ -22,6 +22,11 @@ in {
         "$terminal" = "alacritty";
         "$fileManager" = "alacritty -e lf";
         "$menu" = "tofi-drun --drun-launch=true";
+
+        # Startup
+        exec-once = [
+          "${pkgs.swww}/bin/swww-daemon &"
+        ];
 
         # Environment
         env = [
