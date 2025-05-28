@@ -6,6 +6,7 @@
   config = lib.mkIf config.utilities.enable {
     environment.systemPackages = with pkgs; [
       home-manager
+      alacritty
       fastfetch
       curl
       file
@@ -24,6 +25,11 @@
       veracrypt
       keepassxc
     ];
+
+    # Session variables
+    environment.profileRelativeSessionVariables = {
+      TERMINAL = [ "${pkgs.alacritty}/bin/alacritty" ];
+    };
 
     # Neovim
     programs.neovim.enable = true;

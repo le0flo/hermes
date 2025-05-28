@@ -10,6 +10,7 @@
       elisa
       xwaylandvideobridge
       plasma-browser-integration
+      konsole
     ];
 
     # Packages
