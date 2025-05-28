@@ -1,11 +1,10 @@
 {pkgs, lib, config, ...}: {
   options = {
-    utilities.enable = lib.mkEnableOption "Enables various utilities";
+    utilities.enable = lib.mkEnableOption "Enable various utilities";
   };
 
   config = lib.mkIf config.utilities.enable {
     environment.systemPackages = with pkgs; [
-      home-manager
       alacritty
       fastfetch
       curl

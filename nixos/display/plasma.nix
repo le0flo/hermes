@@ -1,6 +1,6 @@
 {pkgs, lib, config, ...}: {
   options = {
-    plasma.enable = lib.mkEnableOption "Enables Plasma 6";
+    plasma.enable = lib.mkEnableOption "Enable Plasma 6";
   };
 
   config = lib.mkIf config.plasma.enable {
