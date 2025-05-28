@@ -11,7 +11,6 @@
       file
       exfat
       gimp3
-      blueman
       networkmanagerapplet
       vlc
 
