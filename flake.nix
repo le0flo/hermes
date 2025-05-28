@@ -23,7 +23,7 @@
     homeConfigurations."leo" = home-manager.lib.homeManagerConfiguration {
       extraSpecialArgs = { inherit inputs; };
       pkgs = pkgs;
-      modules = [ ./home-manager/leo/home-configuration.nix ];
+      modules = [ ./home-manager/leo/home.nix ];
     };
   };
 }
