@@ -22,7 +22,7 @@
       enable = true;
       config = {
         init = {
-          defaultBranch = "main";
+          defaultBranch = "master";
         };
 
         core = {
