@@ -19,6 +19,20 @@ in {
       portalPackage = hyprlandPackages.xdg-desktop-portal-hyprland;
     };
 
+    # Portals
+    xdg.portal = {
+      config = {
+        hyprland.default = [ "hyprland" "gtk" "gnome" "termfilechooser" ];
+        hyprland."org.freedesktop.portal.FileChooser" = [ "termfilechooser" ];
+        hyprland."org.freedesktop.portal.OpenURI" = [ "termfilechooser" ];
+      };
+
+      extraPortals = with pkgs; [
+        hyprlandPackages.xdg-desktop-portal-hyprland
+        xdg-desktop-portal-termfilechooser
+      ];
+    };
+
     # Packages
     environment.systemPackages = with pkgs; [
       tofi
