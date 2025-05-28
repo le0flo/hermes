@@ -8,21 +8,15 @@
       # Editors
       zed-editor
 
-      # Compilers
-      gcc
-      rustup
+      # Nix
+      nil
+      nixd
 
       # VMs
       temurin-bin
 
       # Interpreters
-      python314
       nodePackages.nodejs
-      texliveBasic
-
-      # Nix
-      nil
-      nixd
     ];
 
     # Git
