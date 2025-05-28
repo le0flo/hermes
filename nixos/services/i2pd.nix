@@ -1,6 +1,6 @@
 {lib, config, ...}: {
   options = {
-    i2pd.enable = lib.mkEnableOption "Enables the i2pd router";
+    i2pd.enable = lib.mkEnableOption "Enable the i2pd router";
   };
 
   config = lib.mkIf config.i2pd.enable {
