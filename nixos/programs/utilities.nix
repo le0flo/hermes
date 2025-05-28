@@ -10,6 +10,7 @@
       curl
       file
       exfat
+      gimp3
       networkmanagerapplet
       vlc
 
