@@ -13,6 +13,19 @@
       konsole
     ];
 
+    # Portals
+    xdg.portal = {
+      config = {
+        kde.default = [ "kde" "gtk" "gnome" ];
+        kde."org.freedesktop.portal.FileChooser" = [ "kde" ];
+        kde."org.freedesktop.portal.OpenURI" = [ "kde" ];
+      };
+
+      extraPortals = with pkgs.kdePackages; [
+        xdg-desktop-portal-kde
+      ];
+    };
+
     # Packages
     environment.systemPackages = with pkgs.kdePackages; [
       kate
