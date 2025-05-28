@@ -8,6 +8,7 @@
       home-manager
       fastfetch
       curl
+      file
       exfat
       networkmanagerapplet
       vlc
