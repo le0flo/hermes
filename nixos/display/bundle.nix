@@ -15,10 +15,7 @@
     };
   };
 
-  # UWSM
-  programs.uwsm.enable = true;
-
   # Desktop enviroments
   plasma.enable = true;
-  hyprland.enable = true;
+  hyprland.enable = false;
 }
