@@ -1,7 +1,7 @@
 {inputs, pkgs, ...}: {
   imports = [
     ./utilities.nix
-    ./dev.nix
+    ./development.nix
     ./virtual-machines.nix
     ./games.nix
     ./obs.nix
@@ -21,10 +21,10 @@
   utilities.enable = true;
 
   # Work
-  dev.enable = true;
+  development.enable = true;
   virtual-machines.enable = true;
 
-  # Casual
+  # Other
   games.enable = true;
   obs.enable = true;
 }
