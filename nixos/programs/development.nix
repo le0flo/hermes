@@ -1,9 +1,9 @@
 {pkgs, lib, config, ...}: {
   options = {
-    dev.enable = lib.mkEnableOption "Enable development tools";
+    development.enable = lib.mkEnableOption "Enable development tools";
   };
 
-  config = lib.mkIf config.dev.enable {
+  config = lib.mkIf config.development.enable {
     environment.systemPackages = with pkgs; [
       # Editors
       zed-editor
@@ -14,9 +14,6 @@
 
       # VMs
       temurin-bin
-
-      # Interpreters
-      nodePackages.nodejs
     ];
 
     # Git
