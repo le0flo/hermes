@@ -3,6 +3,7 @@
     ./portals.nix
     ./manager.nix
     ./plasma.nix
+    ./cosmic.nix
     ./hyprland.nix
   ];
 
@@ -17,5 +18,6 @@
 
   # Desktop enviroments
   plasma.enable = true;
+  cosmic.enable = true;
   hyprland.enable = false;
 }
