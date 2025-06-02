@@ -9,7 +9,7 @@
     programs.gamemode.enable = true;
     programs.steam = {
       enable = true;
-      gamescopeSession.enable = true;
+      gamescopeSession.enable = false; # SteamOS interface
     };
 
     environment.systemPackages = with pkgs; [
