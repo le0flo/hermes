@@ -22,9 +22,11 @@ in {
     # Portals
     xdg.portal = {
       config = {
-        hyprland.default = [ "hyprland" "gtk" "gnome" "termfilechooser" ];
-        hyprland."org.freedesktop.portal.FileChooser" = [ "termfilechooser" ];
-        hyprland."org.freedesktop.portal.OpenURI" = [ "termfilechooser" ];
+        hyprland = {
+          default = [ "hyprland" "termfilechooser" "gtk" "gnome" ];
+          "org.freedesktop.portal.FileChooser" = [ "termfilechooser" ];
+          "org.freedesktop.portal.OpenURI" = [ "termfilechooser" ];
+        };
       };
 
       extraPortals = with pkgs; [
