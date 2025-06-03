@@ -7,6 +7,8 @@
     environment.systemPackages = with pkgs; [
       # Editors
       zed-editor
+      eclipses.eclipse-java
+      dbeaver-bin
 
       # Nix
       nil
