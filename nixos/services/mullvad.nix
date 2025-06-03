@@ -1,6 +1,6 @@
 {pkgs, lib, config, ...}: {
   options = {
-    mullvad.enable = lib.mkEnableOption "Enable the Mullvad VPN client";
+    mullvad.enable = lib.mkEnableOption "Enable the mullvad vpn client";
   };
 
   config = lib.mkIf config.mullvad.enable {

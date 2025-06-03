@@ -10,12 +10,10 @@
       eclipses.eclipse-java
       dbeaver-bin
 
-      # Nix
+      # Languages
+      temurin-bin
       nil
       nixd
-
-      # VMs
-      temurin-bin
     ];
 
     # Git

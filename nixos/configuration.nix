@@ -10,7 +10,7 @@
   ];
 
   boot = {
-    initrd.verbose = false;
+    consoleLogLevel = 3;
 
     kernelParams = [
       "quiet"
@@ -23,19 +23,37 @@
       v4l2loopback
     ];
 
-    consoleLogLevel = 3;
-    supportedFilesystems = [ "ntfs" ];
     extraModprobeConfig = "options v4l2loopback devices=1 video_nr=1 card_label=\"OBS Cam\" exclusive_caps=1";
-
-    plymouth = {
-      enable = true;
-      theme = "bgrt";
-    };
 
     loader = {
       timeout = 3;
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
+    };
+
+    plymouth = {
+      enable = true;
+      theme = "bgrt";
+    };
+  };
+
+  # Locales
+  time.timeZone = "Europe/Rome";
+  console.keyMap = "it";
+
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+
+    extraLocaleSettings = {
+      LC_ADDRESS = "it_IT.UTF-8";
+      LC_IDENTIFICATION = "it_IT.UTF-8";
+      LC_MEASUREMENT = "it_IT.UTF-8";
+      LC_MONETARY = "it_IT.UTF-8";
+      LC_NAME = "it_IT.UTF-8";
+      LC_NUMERIC = "it_IT.UTF-8";
+      LC_PAPER = "it_IT.UTF-8";
+      LC_TELEPHONE = "it_IT.UTF-8";
+      LC_TIME = "it_IT.UTF-8";
     };
   };
 
@@ -43,25 +61,6 @@
   networking = {
     hostName = "hermes";
     networkmanager.enable = true;
-  };
-
-  # Bluetooth
-  hardware.bluetooth.enable = true;
-
-  # Locales
-  time.timeZone = "Europe/Rome";
-  console.keyMap = "it2";
-  i18n.defaultLocale = "en_US.UTF-8";
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "it_IT.UTF-8";
-    LC_IDENTIFICATION = "it_IT.UTF-8";
-    LC_MEASUREMENT = "it_IT.UTF-8";
-    LC_MONETARY = "it_IT.UTF-8";
-    LC_NAME = "it_IT.UTF-8";
-    LC_NUMERIC = "it_IT.UTF-8";
-    LC_PAPER = "it_IT.UTF-8";
-    LC_TELEPHONE = "it_IT.UTF-8";
-    LC_TIME = "it_IT.UTF-8";
   };
 
   # Users

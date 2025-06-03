@@ -7,26 +7,24 @@ in {
   };
 
   config = lib.mkIf config.hyprland.enable {
-    # UWSM
-    programs.uwsm.enable = true;
+    programs = {
+      uwsm.enable = true;
 
-    # Hyprland
-    programs.hyprland = {
-      enable = true;
-      withUWSM = true;
+      hyprland = {
+        enable = true;
+        withUWSM = true;
 
-      package = hyprlandPackages.hyprland;
-      portalPackage = hyprlandPackages.xdg-desktop-portal-hyprland;
+        package = hyprlandPackages.hyprland;
+        portalPackage = hyprlandPackages.xdg-desktop-portal-hyprland;
+      };
     };
 
     # Portals
     xdg.portal = {
-      config = {
-        hyprland = {
-          default = [ "hyprland" "termfilechooser" "gtk" "gnome" ];
-          "org.freedesktop.portal.FileChooser" = [ "termfilechooser" ];
-          "org.freedesktop.portal.OpenURI" = [ "termfilechooser" ];
-        };
+      config.hyprland = {
+        default = [ "hyprland" "termfilechooser" "gtk" "gnome" ];
+        "org.freedesktop.portal.FileChooser" = [ "termfilechooser" ];
+        "org.freedesktop.portal.OpenURI" = [ "termfilechooser" ];
       };
 
       extraPortals = with pkgs; [

@@ -26,19 +26,15 @@
       keepassxc
     ];
 
-    # Neovim
-    programs.neovim.enable = true;
+    programs = {
+      neovim.enable = true;
+      htop.enable = true;
+      zsh.enable = true;
 
-    # Htop
-    programs.htop.enable = true;
-
-    # ZShell
-    programs.zsh.enable = true;
-
-    # GPG
-    programs.gnupg.agent = {
-      enable = true;
-      enableSSHSupport = true;
+      gnupg.agent = {
+        enable = true;
+        enableSSHSupport = true;
+      };
     };
   };
 }

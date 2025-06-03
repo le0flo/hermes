@@ -4,7 +4,6 @@
   };
 
   config = lib.mkIf config.plasma.enable {
-    # Plasma
     services.desktopManager.plasma6.enable = true;
     environment.plasma6.excludePackages = with pkgs.kdePackages; [
       elisa
@@ -15,12 +14,10 @@
 
     # Portals
     xdg.portal = {
-      config = {
-        kde = {
-          default = [ "kde" "gtk" "gnome" ];
-          "org.freedesktop.portal.FileChooser" = [ "kde" ];
-          "org.freedesktop.portal.OpenURI" = [ "kde" ];
-        };
+      config.kde = {
+        default = [ "kde" "gtk" "gnome" ];
+        "org.freedesktop.portal.FileChooser" = [ "kde" ];
+        "org.freedesktop.portal.OpenURI" = [ "kde" ];
       };
 
       extraPortals = with pkgs.kdePackages; [

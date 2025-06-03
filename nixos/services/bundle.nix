@@ -7,15 +7,22 @@
   ];
 
   # Security
-  security.rtkit.enable = true;
-  security.polkit.enable = true;
+  security = {
+    rtkit.enable = true;
+    polkit.enable = true;
+  };
+
+  # Bluetooth
+  hardware.bluetooth.enable = true;
 
   # Base
-  services.dbus.enable = true;
-  services.libinput.enable = true;
-  services.power-profiles-daemon.enable = true;
-  services.flatpak.enable = true;
-  services.printing.enable = true;
+  services = {
+    dbus.enable = true;
+    libinput.enable = true;
+    power-profiles-daemon.enable = true;
+    flatpak.enable = true;
+    printing.enable = true;
+  };
 
   # Custom
   audio.enable = true;
