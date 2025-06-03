@@ -1,6 +1,6 @@
 {lib, config, ...}: {
   options = {
-    alacritty.enable = lib.mkEnableOption "Enable my Alacritty configuration";
+    alacritty.enable = lib.mkEnableOption "Enable the alacritty configuration";
   };
 
   config = lib.mkIf config.alacritty.enable {

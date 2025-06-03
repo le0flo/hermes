@@ -1,15 +1,19 @@
 {pkgs, lib, config, ...}: {
   options = {
-    games.enable = lib.mkEnableOption "Enable Steam and other game launchers";
+    games.enable = lib.mkEnableOption "Enable steam and other game launchers";
   };
 
   config = lib.mkIf config.games.enable {
     hardware.steam-hardware.enable = true;
-    programs.gamescope.enable = true;
-    programs.gamemode.enable = true;
-    programs.steam = {
-      enable = true;
-      gamescopeSession.enable = false; # SteamOS interface
+
+    programs = {
+      gamescope.enable = true;
+      gamemode.enable = true;
+
+      steam = {
+        enable = true;
+        gamescopeSession.enable = false; # SteamOS interface
+      };
     };
 
     environment.systemPackages = with pkgs; [
