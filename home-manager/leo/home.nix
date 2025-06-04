@@ -10,7 +10,8 @@
     homeDirectory = "/home/leo";
 
     sessionVariables = {
-      PATH = "$PATH:$HOME/.local/bin";
+      PSQL_USER = "test";
+      PSQL_PASSWORD = "test";
     };
   };
 
