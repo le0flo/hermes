@@ -20,6 +20,7 @@
       # Web
       librewolf
       qbittorrent
+      kdePackages.kleopatra
 
       # Privacy
       veracrypt
