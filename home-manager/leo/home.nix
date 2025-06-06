@@ -10,8 +10,8 @@
     homeDirectory = "/home/leo";
 
     sessionVariables = {
-      PSQL_USER = "test";
-      PSQL_PASSWORD = "test";
+      SIMPLEACCOUNTS_PSQL_USER = "test";
+      SIMPLEACCOUNTS_PSQL_PASSWORD = "test";
     };
   };
 
