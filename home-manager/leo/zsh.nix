@@ -23,6 +23,7 @@
         vim = "nvim";
         npmg = "npm -g --prefix \"$HOME/.local\"";
         ssh = "TERM=xterm-256color ssh";
+        configure-nix = "zeditor ~/git/hermes";
         update-system = "sudo nixos-rebuild switch --flake ~/git/hermes";
         update-home = "home-manager switch --flake ~/git/hermes";
       };
