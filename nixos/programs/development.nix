@@ -9,6 +9,7 @@
       zed-editor
       eclipses.eclipse-java
       dbeaver-bin
+      digital
 
       # Languages
       temurin-bin
