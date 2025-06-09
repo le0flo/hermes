@@ -11,8 +11,30 @@
       dbeaver-bin
       digital
 
-      # Languages
+      # Java
       temurin-bin
+
+      # Rust
+      rustc-wasm32
+      cargo
+      rustc
+
+      # NodeJS
+      nodejs
+
+      # C / C++
+      gcc
+      cmake
+      gdb
+
+      # Python
+      python313
+
+      # Latex
+      texliveBasic
+      texlivePackages.latexmk
+
+      # Nix
       nil
       nixd
     ];
