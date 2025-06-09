@@ -30,6 +30,9 @@
       kate
       filelight
       discover
+
+      sddm-kcm
+      flatpak-kcm
     ];
   };
 }
