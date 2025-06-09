@@ -5,27 +5,24 @@
 
   config = lib.mkIf config.utilities.enable {
     environment.systemPackages = with pkgs; [
-      alacritty
       fastfetch
+      wl-clipboard
+      exfat
+      vlc
       curl
       file
-      exfat
-      gimp3
-      wl-clipboard
-      networkmanagerapplet
-      vlc
 
-      # Wine
-      wine64
+      # Terminal
+      alacritty
 
       # Web
       librewolf
       qbittorrent
-      kdePackages.kleopatra
 
       # Privacy
       veracrypt
       keepassxc
+      kdePackages.kleopatra
     ];
 
     programs = {

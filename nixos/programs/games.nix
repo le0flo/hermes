@@ -19,6 +19,9 @@
     environment.systemPackages = with pkgs; [
       heroic
       prismlauncher
+
+      # Wine
+      wineWow64Packages.waylandFull
     ];
   };
 }
