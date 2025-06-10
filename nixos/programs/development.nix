@@ -46,7 +46,7 @@
           defaultBranch = "master";
         };
         core = {
-          editor = "nvim";
+          editor = "hx";
         };
       };
     };

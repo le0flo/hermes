@@ -3,6 +3,7 @@
     ./zsh.nix
     ./alacritty.nix
     ./helix.nix
+    ./zed.nix
     ./hyprland.nix
   ];
 
@@ -19,6 +20,7 @@
   zsh.enable = true;
   alacritty.enable = true;
   helix.enable = true;
+  zed.enable = true;
   hyprland.enable = false;
 
   # Version
