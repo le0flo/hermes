@@ -2,6 +2,7 @@
   imports = [
     ./zsh.nix
     ./alacritty.nix
+    ./helix.nix
     ./hyprland.nix
   ];
 
@@ -17,6 +18,7 @@
 
   zsh.enable = true;
   alacritty.enable = true;
+  helix.enable = true;
   hyprland.enable = false;
 
   # Version
