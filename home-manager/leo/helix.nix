@@ -8,7 +8,7 @@
       enable = true;
 
       settings = {
-        theme = "zed_onedark";
+        theme = "onedark";
 
         editor = {
           line-number = "relative";
