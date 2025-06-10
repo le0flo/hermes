@@ -8,8 +8,8 @@
       enable = true;
       enableVirtualCamera = true;
 
-      plugins = [
-        pkgs.obs-studio-plugins.droidcam-obs
+      plugins = with pkgs.obs-studio-plugins; [
+        droidcam-obs
       ];
     };
   };
