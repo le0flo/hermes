@@ -14,7 +14,7 @@
 
       oh-my-zsh = {
         enable = true;
-        theme = "af-magic";
+        theme = "macovsky";
       };
 
       shellAliases = {
