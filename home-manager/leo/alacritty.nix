@@ -10,7 +10,7 @@
       settings = {
         window = {
           dimensions = { columns = 110; lines = 30; };
-          padding = { x = 10; y = 10; };
+          #padding = { x = 10; y = 10; };
           opacity = 0.7;
           blur = true;
         };
