@@ -7,10 +7,7 @@
     environment.systemPackages = with pkgs; [
       # Editors
       zed-editor
-      helix
       eclipses.eclipse-java
-      dbeaver-bin
-      digital
 
       # Java
       temurin-bin

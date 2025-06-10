@@ -5,29 +5,32 @@
 
   config = lib.mkIf config.utilities.enable {
     environment.systemPackages = with pkgs; [
-      fastfetch
-      wl-clipboard
-      exfat
-      vlc
-      curl
-      file
-
       # Terminal
       alacritty
+      wl-clipboard
+      helix
+      fastfetch
+      htop
 
       # Web
       librewolf
       qbittorrent
+      curl
 
       # Privacy
       veracrypt
       keepassxc
       kdePackages.kleopatra
+
+      # Media
+      vlc
+
+      # Files
+      file
+      exfat
     ];
 
     programs = {
-      neovim.enable = true;
-      htop.enable = true;
       zsh.enable = true;
 
       gnupg.agent = {
