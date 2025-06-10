@@ -27,9 +27,11 @@ in {
         "org.freedesktop.portal.OpenURI" = [ "termfilechooser" ];
       };
 
-      extraPortals = with pkgs; [
-        hyprlandPackages.xdg-desktop-portal-hyprland
-        xdg-desktop-portal-termfilechooser
+      extraPortals = with hyprlandPackages; [
+        xdg-desktop-portal-hyprland
+        pkgs.xdg-desktop-portal-termfilechooser
+        pkgs.xdg-desktop-portal-gtk
+        pkgs.xdg-desktop-portal-gnome
       ];
     };
 
