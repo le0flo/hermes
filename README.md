@@ -3,7 +3,6 @@
 ### Requirements
 
 - [NixOS](https://nixos.org/)
-- [Nix flakes](https://nixos.wiki/wiki/flakes)
 
 ### Installation
 
