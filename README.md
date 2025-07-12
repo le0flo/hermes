@@ -2,7 +2,7 @@
 
 ### Requirements
 
-- [nixos](https://nixos.org/)
+- [NixOS](https://nixos.org/)
 
 ### Installation
 
