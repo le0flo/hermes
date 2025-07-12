@@ -2,16 +2,13 @@
 
 ### Requirements
 
-- [NixOS](https://nixos.org/)
-
-### Installation
-
-1. Enable `flakes` in your existing NixOS configuration
-2. Replace the `hardware-configuration.nix` in the `nixos/` folder with yours from `/etc/nixos/`
+- [NixOS](https://nixos.org/) with [flakes](https://wiki.nixos.org/wiki/Flakes) enabled
 
 ### Usage
 
 ```sh
+git clone https://github.com/le0flo/hermes.git
 cd hermes
+cp /etc/nixos/hardware-configuration.nix ./nixos/
 sudo nixos-rebuild switch --flake . # The system will use the configuration specified in this folder from now on
 ```
