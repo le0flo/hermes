@@ -1,14 +1,20 @@
-# Hermes's NixOS configuration
+# Hermes's configurations
 
-### Requirements
-
-- [NixOS](https://nixos.org/) with [flakes](https://wiki.nixos.org/wiki/Flakes) enabled
+A repository for every configuration and dotfiles for my laptop's operating system.
+Not meant to be used on non-unix machines.
 
 ### Usage
+
+Download the repo:
 
 ```sh
 git clone https://github.com/le0flo/hermes.git
 cd hermes
+```
+
+If you have **NixOS**:
+
+```sh
 cp /etc/nixos/hardware-configuration.nix ./nixos/
-sudo nixos-rebuild switch --flake . # The system will use the configuration specified in this folder from now on
+sudo nixos-rebuild switch --flake .
 ```
