@@ -1,6 +1,6 @@
 # Hermes's configurations
 
-A repository for every configuration and dotfiles for my laptop's operating system.
+A repository for every configuration and dotfiles on my laptop's operating system.
 Not meant to be used on non-unix machines.
 
 ### Usage
@@ -8,7 +8,7 @@ Not meant to be used on non-unix machines.
 Download the repo:
 
 ```sh
-git clone https://github.com/le0flo/hermes.git
+git clone https://github.com/le0flo/hermes
 cd hermes
 ```
 
