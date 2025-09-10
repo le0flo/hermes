@@ -14,7 +14,7 @@
 
       oh-my-zsh = {
         enable = true;
-        theme = "eastwood";
+        theme = "robbyrussell";
       };
 
       shellAliases = {
