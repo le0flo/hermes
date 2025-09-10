@@ -19,11 +19,9 @@
 
       shellAliases = {
         ll = "ls -al";
-        ff = "fastfetch";
         ssh = "TERM=xterm-256color ssh";
-        configure-nix = "zeditor ~/git/le0flo/hermes";
-        update-system = "sudo nixos-rebuild switch --flake ~/git/le0flo/hermes";
-        update-home = "home-manager switch --flake ~/git/le0flo/hermes";
+        update-system = "sudo nixos-rebuild switch --flake ~/Desktop/hermes";
+        update-home = "home-manager switch --flake ~/Desktop/hermes";
       };
 
       initContent = ''

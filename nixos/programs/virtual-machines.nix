@@ -5,7 +5,13 @@
 
   config = lib.mkIf config.virtual-machines.enable {
     virtualisation = {
-      docker.enable = true;
+      docker = {
+        enable = false;
+        rootless = {
+          enable = true;
+          setSocketVariable = true;
+        };
+      };
       libvirtd.enable = true;
       spiceUSBRedirection.enable = true;
     };

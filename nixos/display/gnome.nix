@@ -7,7 +7,6 @@
     services.desktopManager.gnome.enable = true;
     environment.gnome.excludePackages = with pkgs; [
       gnome-connections
-      gnome-console
       gnome-contacts
       gnome-disk-utility
       gnome-music
@@ -39,6 +38,7 @@
     # Packages
     environment.systemPackages = with pkgs; [
       gnome-tweaks
+      gnome-software
     ];
   };
 }

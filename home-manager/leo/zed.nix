@@ -24,8 +24,8 @@
 
         theme = {
           mode = "system";
-          light = "One Dark";
-          dark = "One Dark";
+          light = "Gruvbox Light";
+          dark = "Gruvbox Dark";
         };
       };
     };

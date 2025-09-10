@@ -72,10 +72,7 @@
     extraGroups = [
       "wheel"
       "networkmanager"
-      "libvirtd"
       "docker"
-      "dialout"
-      "tty"
     ];
   };
 

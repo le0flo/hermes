@@ -6,21 +6,12 @@
   config = lib.mkIf config.utilities.enable {
     environment.systemPackages = with pkgs; [
       # Terminal
-      alacritty
-      wl-clipboard
-      helix
-      fastfetch
+      vim
       htop
-
-      # Web
-      librewolf
-      qbittorrent
-      curl
 
       # Privacy
       veracrypt
       keepassxc
-      kdePackages.kleopatra
 
       # Media
       vlc

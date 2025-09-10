@@ -1,7 +1,5 @@
 {...}: {
-  services.displayManager.sddm = {
+  services.displayManager.ly = {
     enable = true;
-    wayland.enable = true;
-    theme = "breeze";
   };
 }

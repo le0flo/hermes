@@ -7,23 +7,20 @@
     environment.systemPackages = with pkgs; [
       # Editors
       zed-editor
-      eclipses.eclipse-java
 
       # Java
       temurin-bin
 
       # Rust
-      rustc-wasm32
-      cargo
-      rustc
+      rustup
 
       # NodeJS
       nodejs
 
       # C / C++
       gcc
-      cmake
       gdb
+      cmake
 
       # Python
       python313
@@ -46,7 +43,7 @@
           defaultBranch = "master";
         };
         core = {
-          editor = "hx";
+          editor = "vim";
         };
       };
     };
