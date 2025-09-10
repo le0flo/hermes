@@ -1,6 +1,5 @@
 {...}: {
   imports = [
-    ./audio.nix
     ./ssh.nix
     ./i2pd.nix
     ./vpn.nix
@@ -10,6 +9,18 @@
   security = {
     rtkit.enable = true;
     polkit.enable = true;
+  };
+
+  # Audio
+  services = {
+    pulseaudio.enable = false;
+
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+    };
   };
 
   # Bluetooth
@@ -25,7 +36,6 @@
   };
 
   # Custom
-  audio.enable = true;
   ssh.enable = true;
   vpn.enable = true;
   i2pd.enable = true;

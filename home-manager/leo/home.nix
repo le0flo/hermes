@@ -12,6 +12,7 @@
     homeDirectory = "/home/leo";
   };
 
+  # Custom
   zsh.enable = true;
   alacritty.enable = false;
   helix.enable = false;

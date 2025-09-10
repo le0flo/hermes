@@ -9,6 +9,7 @@
     ./programs/bundle.nix
   ];
 
+  # Boot
   boot = {
     consoleLogLevel = 3;
 
@@ -37,6 +38,14 @@
     };
   };
 
+  # Networking
+  networking = {
+    hostName = "hermes";
+
+    networkmanager.enable = true;
+    firewall.enable = false;
+  };
+
   # Locales
   time.timeZone = "Europe/Rome";
   console.keyMap = "it";
@@ -55,12 +64,6 @@
       LC_TELEPHONE = "it_IT.UTF-8";
       LC_TIME = "it_IT.UTF-8";
     };
-  };
-
-  # Networking
-  networking = {
-    hostName = "hermes";
-    networkmanager.enable = true;
   };
 
   # Users
