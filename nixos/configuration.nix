@@ -61,6 +61,9 @@
   networking = {
     hostName = "hermes";
     networkmanager.enable = true;
+    firewall = {
+      enable = false;
+    };
   };
 
   # Users

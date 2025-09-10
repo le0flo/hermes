@@ -16,9 +16,10 @@
       # Media
       vlc
 
-      # Files
+      # Other
       file
       exfat
+      tcpdump
     ];
 
     programs = {
