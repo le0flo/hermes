@@ -1,8 +1,8 @@
 {inputs, pkgs, ...}: {
   imports = [
-    ./utilities.nix
+    ./utils.nix
     ./development.nix
-    ./virtual-machines.nix
+    ./virtualization.nix
     ./games.nix
     ./obs.nix
   ];
@@ -17,14 +17,10 @@
   # Dynamic linking
   programs.nix-ld.enable = true;
 
-  # Base
-  utilities.enable = true;
-
-  # Work
+  # Custom
+  utils.enable = true;
   development.enable = true;
-  virtual-machines.enable = true;
-
-  # Other
+  virtualization.enable = true;
   games.enable = true;
   obs.enable = true;
 }

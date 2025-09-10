@@ -1,6 +1,6 @@
 {lib, config, ...}: {
   options = {
-    helix.enable = lib.mkEnableOption "Enable the helix configuration";
+    helix.enable = lib.mkEnableOption "helix config";
   };
 
   config = lib.mkIf config.helix.enable {

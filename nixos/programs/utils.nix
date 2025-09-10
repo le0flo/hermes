@@ -1,9 +1,9 @@
 {pkgs, lib, config, ...}: {
   options = {
-    utilities.enable = lib.mkEnableOption "Enable various utilities";
+    utils.enable = lib.mkEnableOption "various utilities";
   };
 
-  config = lib.mkIf config.utilities.enable {
+  config = lib.mkIf config.utils.enable {
     environment.systemPackages = with pkgs; [
       # Terminal
       vim

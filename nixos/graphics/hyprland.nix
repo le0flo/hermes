@@ -3,7 +3,7 @@ let
   hyprlandPackages = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
 in {
   options = {
-    hyprland.enable = lib.mkEnableOption "Enable Hyprland";
+    hyprland.enable = lib.mkEnableOption "hyprland";
   };
 
   config = lib.mkIf config.hyprland.enable {

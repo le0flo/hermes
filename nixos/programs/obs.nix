@@ -1,6 +1,6 @@
 {pkgs, lib, config, ...}: {
   options = {
-    obs.enable = lib.mkEnableOption "Enable obs and virtual camera";
+    obs.enable = lib.mkEnableOption "obs and obs virtual camera";
   };
 
   config = lib.mkIf config.obs.enable {

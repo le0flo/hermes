@@ -1,6 +1,6 @@
 {pkgs, lib, config, ...}: {
   options = {
-    development.enable = lib.mkEnableOption "Enable development tools";
+    development.enable = lib.mkEnableOption "development tools";
   };
 
   config = lib.mkIf config.development.enable {

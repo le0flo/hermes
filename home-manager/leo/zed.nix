@@ -1,6 +1,6 @@
 {lib, config, ...}: {
   options = {
-    zed.enable = lib.mkEnableOption "Enable the zed configuration";
+    zed.enable = lib.mkEnableOption "zed config";
   };
 
   config = lib.mkIf config.zed.enable {

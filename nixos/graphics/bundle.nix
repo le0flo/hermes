@@ -1,8 +1,8 @@
 {...}: {
   imports = [
-    ./manager.nix
-    ./plasma.nix
+    ./display-manager.nix
     ./gnome.nix
+    ./plasma.nix
     ./cosmic.nix
     ./hyprland.nix
   ];
@@ -20,8 +20,8 @@
   xdg.portal.enable = true;
 
   # Desktop enviroments
-  plasma.enable = false;
   gnome.enable = true;
+  plasma.enable = false;
   cosmic.enable = false;
   hyprland.enable = false; # xdg-desktop-portal-hyprland conflicts with other xdg-desktop-portal implementations
 }

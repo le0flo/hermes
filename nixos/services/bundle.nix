@@ -3,7 +3,7 @@
     ./audio.nix
     ./ssh.nix
     ./i2pd.nix
-    ./mullvad.nix
+    ./vpn.nix
   ];
 
   # Security
@@ -27,6 +27,6 @@
   # Custom
   audio.enable = true;
   ssh.enable = true;
+  vpn.enable = true;
   i2pd.enable = true;
-  mullvad.enable = true;
 }

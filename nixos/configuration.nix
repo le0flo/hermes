@@ -4,7 +4,7 @@
     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-l14-intel
     inputs.home-manager.nixosModules.home-manager
 
-    ./display/bundle.nix
+    ./graphics/bundle.nix
     ./services/bundle.nix
     ./programs/bundle.nix
   ];
@@ -61,9 +61,6 @@
   networking = {
     hostName = "hermes";
     networkmanager.enable = true;
-    firewall = {
-      enable = false;
-    };
   };
 
   # Users

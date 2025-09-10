@@ -1,9 +1,9 @@
 {...}: {
   imports = [
     ./zsh.nix
+    ./zed.nix
     ./alacritty.nix
     ./helix.nix
-    ./zed.nix
     ./hyprland.nix
   ];
 

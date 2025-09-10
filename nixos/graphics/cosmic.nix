@@ -1,6 +1,6 @@
 {pkgs, lib, config, ...}: {
   options = {
-    cosmic.enable = lib.mkEnableOption "Enable Cosmic";
+    cosmic.enable = lib.mkEnableOption "cosmic";
   };
 
   config = lib.mkIf config.cosmic.enable {
