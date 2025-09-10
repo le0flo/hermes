@@ -18,8 +18,11 @@
       };
 
       shellAliases = {
-        ll = "ls -al";
+        ls = "ls -lh";
+        l = "ls";
+        ll = "ls -a";
         ssh = "TERM=xterm-256color ssh";
+        configure-nix = "zeditor ~/Desktop/hermes";
         update-system = "sudo nixos-rebuild switch --flake ~/Desktop/hermes";
         update-home = "home-manager switch --flake ~/Desktop/hermes";
       };
