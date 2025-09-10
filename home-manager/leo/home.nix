@@ -2,8 +2,8 @@
   imports = [
     ./zsh.nix
     ./zed.nix
+    ./syncthing.nix
     ./alacritty.nix
-    ./helix.nix
     ./hyprland.nix
   ];
 
@@ -14,9 +14,9 @@
 
   # Custom
   zsh.enable = true;
-  alacritty.enable = false;
-  helix.enable = false;
   zed.enable = true;
+  syncthing.enable = true;
+  alacritty.enable = false;
   hyprland.enable = false;
 
   # Version

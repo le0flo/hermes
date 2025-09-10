@@ -20,6 +20,7 @@
       file
       exfat
       tcpdump
+      wireguard-tools
     ];
 
     programs = {
