@@ -24,6 +24,7 @@
 
       # Python
       python313
+      pyright
 
       # Latex
       texliveBasic

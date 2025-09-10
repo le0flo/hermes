@@ -18,7 +18,7 @@
       };
 
       shellAliases = {
-        ls = "ls -lh";
+        ls = "ls -lh --color=auto";
         l = "ls";
         ll = "ls -a";
         ssh = "TERM=xterm-256color ssh";
