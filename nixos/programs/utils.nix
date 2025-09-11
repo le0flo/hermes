@@ -15,6 +15,7 @@
 
       # Media
       vlc
+      aonsoku
 
       # Other
       file
