@@ -7,6 +7,11 @@
     programs.zed-editor = {
       enable = true;
 
+      extensions = [
+        "html"
+        "toml"
+      ];
+
       userSettings = {
         features = {
           copilot = false;
