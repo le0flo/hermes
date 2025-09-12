@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   imports = [
     ./display-manager.nix
     ./gnome.nix
@@ -6,6 +6,14 @@
     ./cosmic.nix
     ./hyprland.nix
   ];
+  
+  # Drivers
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+    ];
+  };
 
   # X11
   services.xserver = {

@@ -5,10 +5,6 @@
 
   config = lib.mkIf config.utils.enable {
     environment.systemPackages = with pkgs; [
-      # Terminal
-      vim
-      htop
-
       # Privacy
       veracrypt
       keepassxc
@@ -20,9 +16,13 @@
       ffmpeg
 
       # Other
+      vim
+      htop
       file
       exfat
       tcpdump
+      pciutils
+      vulkan-tools
       wireguard-tools
     ];
 
