@@ -46,6 +46,21 @@
     networkmanager.enable = true;
 
     firewall.enable = false;
+
+    wireguard.interfaces."home" = {
+      ips = [ "10.0.0.2/24" ];
+      listenPort = 51820;
+
+      privateKeyFile = "/home/leo/.wireguard/private";
+
+      peers = [
+        {
+          publicKey = "GX/1ks+T1OcBsW7XiMIN1k2/azaCWH69eGh9dltfJhU=";
+          allowedIPs = [ "10.0.0.0/24" ];
+          endpoint = "home.leoflo.me:51820";
+        }
+      ];
+    };
   };
 
   # Locales
