@@ -16,6 +16,8 @@
       # Media
       vlc
       aonsoku
+      yt-dlp
+      ffmpeg
 
       # Other
       file

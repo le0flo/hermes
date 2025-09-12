@@ -46,6 +46,22 @@
     networkmanager.enable = true;
 
     firewall.enable = false;
+
+    wg-quick.interfaces."home" = {
+      address = [ "10.0.0.2/24" ];
+      listenPort = 51820;
+
+      privateKeyFile = "/home/leo/.wireguard/private";
+
+      peers = [
+        {
+          endpoint = "home.leoflo.me:51820";
+          publicKey = "GX/1ks+T1OcBsW7XiMIN1k2/azaCWH69eGh9dltfJhU=";
+          allowedIPs = [ "192.168.1.250/32" ];
+          persistentKeepalive = 25;
+        }
+      ];
+    };
   };
 
   # Locales
