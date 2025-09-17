@@ -5,6 +5,12 @@
 
   config = lib.mkIf config.utils.enable {
     environment.systemPackages = with pkgs; [
+      # Browser
+      firefox
+
+      # Mail
+      thunderbird
+
       # Privacy
       veracrypt
       keepassxc
