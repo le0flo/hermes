@@ -27,8 +27,7 @@
       pyright
 
       # Latex
-      texliveBasic
-      texlivePackages.latexmk
+      texliveFull
 
       # Nix
       nil

@@ -26,7 +26,9 @@
       htop
       file
       exfat
+      gnumake
       tcpdump
+      pandoc
       pciutils
       vulkan-tools
       wireguard-tools
