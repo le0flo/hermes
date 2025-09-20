@@ -48,16 +48,16 @@
     firewall.enable = false;
 
     wireguard.interfaces."home" = {
-      ips = [ "10.0.0.2/24" ];
-      listenPort = 51820;
+      ips = [ "10.69.0.3/24" ];
 
-      privateKeyFile = "/home/leo/.wireguard/private";
+      privateKeyFile = "/home/leo/.wireguard/private.key";
 
       peers = [
         {
-          publicKey = "GX/1ks+T1OcBsW7XiMIN1k2/azaCWH69eGh9dltfJhU=";
-          allowedIPs = [ "10.0.0.0/24" ];
-          endpoint = "home.leoflo.me:51820";
+          publicKey = "rwUMCdhjQbQt9uGjljfdABj4DSJFgL62bzT13sg8LmU=";
+          allowedIPs = [ "10.69.0.0/24" ];
+          endpoint = "leoflo.me:51820";
+          persistentKeepalive = 25;
         }
       ];
     };
