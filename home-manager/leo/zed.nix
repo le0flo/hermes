@@ -10,6 +10,7 @@
       extensions = [
         "html"
         "toml"
+        "one-dark-pro"
       ];
 
       userSettings = {
@@ -29,8 +30,8 @@
 
         theme = {
           mode = "system";
-          light = "Gruvbox Light";
-          dark = "Gruvbox Dark";
+          light = "One Dark Pro";
+          dark = "One Dark Pro";
         };
       };
     };
