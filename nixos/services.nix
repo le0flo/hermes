@@ -1,8 +1,8 @@
 {...}: {
   imports = [
-    ./ssh.nix
-    ./i2pd.nix
-    ./vpn.nix
+    ./services/ssh.nix
+    ./services/i2pd.nix
+    ./services/vpn.nix
   ];
 
   # Security

@@ -9,7 +9,7 @@
     # Portals
     xdg.portal = {
       config.cosmic = {
-        default = [ "cosmic" "gtk" "gnome" ];
+        default = [ "cosmic" "gtk" ];
         "org.freedesktop.portal.FileChooser" = [ "cosmic" ];
         "org.freedesktop.portal.OpenURI" = [ "cosmic" ];
       };
@@ -17,7 +17,6 @@
       extraPortals = with pkgs; [
         xdg-desktop-portal-cosmic
         xdg-desktop-portal-gtk
-        xdg-desktop-portal-gnome
       ];
     };
   };

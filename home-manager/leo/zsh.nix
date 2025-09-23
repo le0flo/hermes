@@ -23,8 +23,7 @@
         l = "ls";
         ll = "ls -a";
         ssh = "TERM=xterm-256color ssh";
-        vpn-up = "sudo wg-quick up ~/.wireguard/home.conf";
-        vpn-down = "sudo wg-quick down ~/.wireguard/home.conf";
+
         configure-nix = "zeditor ~/Desktop/hermes";
         update-system = "sudo nixos-rebuild switch --flake ~/Desktop/hermes";
         update-home = "home-manager switch --flake ~/Desktop/hermes";

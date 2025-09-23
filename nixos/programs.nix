@@ -1,16 +1,18 @@
 {inputs, pkgs, ...}: {
   imports = [
-    ./utils.nix
-    ./development.nix
-    ./virtualization.nix
-    ./games.nix
-    ./obs.nix
+    ./programs/utils.nix
+    ./programs/development.nix
+    ./programs/virtualization.nix
+    ./programs/games.nix
+    ./programs/obs.nix
   ];
 
   # NixOS
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   environment.systemPackages = [
+    # Home manager
     inputs.home-manager.packages.${pkgs.stdenv.hostPlatform.system}.home-manager
   ];
 

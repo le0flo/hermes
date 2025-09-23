@@ -1,12 +1,12 @@
 {pkgs, ...}: {
   imports = [
-    ./display-manager.nix
-    ./gnome.nix
-    ./plasma.nix
-    ./cosmic.nix
-    ./hyprland.nix
+    ./gui/display-manager.nix
+    ./gui/gnome.nix
+    ./gui/plasma.nix
+    ./gui/cosmic.nix
+    ./gui/hyprland.nix
   ];
-  
+
   # Drivers
   hardware.graphics = {
     enable = true;

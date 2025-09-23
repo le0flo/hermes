@@ -5,6 +5,7 @@
 
   config = lib.mkIf config.gnome.enable {
     services.desktopManager.gnome.enable = true;
+
     environment.gnome.excludePackages = with pkgs; [
       gnome-connections
       gnome-contacts

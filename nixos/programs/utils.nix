@@ -34,13 +34,13 @@
       wireguard-tools
     ];
 
-    programs = {
-      zsh.enable = true;
+    # Zsh
+    programs.zsh.enable = true;
 
-      gnupg.agent = {
-        enable = true;
-        enableSSHSupport = true;
-      };
+    # GnuPG
+    programs.gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
     };
   };
 }

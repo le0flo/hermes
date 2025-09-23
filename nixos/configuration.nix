@@ -1,12 +1,12 @@
 {inputs, config, pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
+    ./gui.nix
+    ./services.nix
+    ./programs.nix
+
     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-l14-intel
     inputs.home-manager.nixosModules.home-manager
-
-    ./graphics/bundle.nix
-    ./services/bundle.nix
-    ./programs/bundle.nix
   ];
 
   # Boot

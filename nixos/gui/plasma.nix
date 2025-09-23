@@ -5,6 +5,7 @@
 
   config = lib.mkIf config.plasma.enable {
     services.desktopManager.plasma6.enable = true;
+
     environment.plasma6.excludePackages = with pkgs.kdePackages; [
       xwaylandvideobridge
       plasma-browser-integration
@@ -15,15 +16,14 @@
     # Portals
     xdg.portal = {
       config.kde = {
-        default = [ "kde" "gtk" "gnome" ];
+        default = [ "kde" "gtk" ];
         "org.freedesktop.portal.FileChooser" = [ "kde" ];
         "org.freedesktop.portal.OpenURI" = [ "kde" ];
       };
 
-      extraPortals = with pkgs.kdePackages; [
-        xdg-desktop-portal-kde
-        pkgs.xdg-desktop-portal-gtk
-        pkgs.xdg-desktop-portal-gnome
+      extraPortals = with pkgs; [
+        kdePackages.xdg-desktop-portal-kde
+        xdg-desktop-portal-gtk
       ];
     };
 
