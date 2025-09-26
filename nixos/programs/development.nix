@@ -7,31 +7,11 @@
     environment.systemPackages = with pkgs; [
       # Editors
       zed-editor
-
-      # Java
-      temurin-bin
-
-      # Rust
-      rustup
-
-      # NodeJS
-      nodejs
-
-      # C / C++
-      gcc
-      gdb
-      cmake
-
-      # Python
-      python313
-      pyright
-
-      # Latex
-      texliveFull
+      gummi
 
       # Nix
-      nil
       nixd
+      nil
     ];
 
     # Git

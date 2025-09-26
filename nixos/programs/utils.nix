@@ -12,8 +12,8 @@
       thunderbird
 
       # Privacy
-      veracrypt
       keepassxc
+      veracrypt
 
       # Media
       vlc
@@ -30,6 +30,7 @@
       tcpdump
       pandoc
       pciutils
+      fastfetch
       vulkan-tools
       wireguard-tools
     ];
