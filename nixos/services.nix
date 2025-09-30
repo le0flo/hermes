@@ -2,7 +2,6 @@
   imports = [
     ./services/ssh.nix
     ./services/i2pd.nix
-    ./services/vpn.nix
   ];
 
   # Security
@@ -26,7 +25,7 @@
   # Bluetooth
   hardware.bluetooth.enable = true;
 
-  # Base
+  # Services
   services = {
     dbus.enable = true;
     libinput.enable = true;
@@ -37,6 +36,5 @@
 
   # Custom
   ssh.enable = true;
-  vpn.enable = true;
   i2pd.enable = true;
 }
