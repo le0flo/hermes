@@ -1,6 +1,5 @@
 {...}: {
   imports = [
-    ./services/ssh.nix
     ./services/i2pd.nix
   ];
 
@@ -35,6 +34,5 @@
   };
 
   # Custom
-  ssh.enable = true;
   i2pd.enable = true;
 }

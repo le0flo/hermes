@@ -1,7 +1,5 @@
 {inputs, pkgs, ...}: {
   imports = [
-    ./programs/development.nix
-    ./programs/virtualization.nix
     ./programs/games.nix
     ./programs/obs.nix
   ];
@@ -12,32 +10,15 @@
 
   # Packages
   environment.systemPackages = with pkgs; [
+    firefox thunderbird keepassxc
+    vlc aonsoku ffmpeg yt-dlp
+    veracrypt exfat
+    zed-editor nil nixd
+    vim htop file
+    openssh rsync wireguard-tools
+
     # Home manager
     inputs.home-manager.packages.${pkgs.stdenv.hostPlatform.system}.home-manager
-
-    # Browser
-    firefox
-
-    # Mail client
-    thunderbird
-
-    # Password manager
-    keepassxc
-
-    # Media
-    vlc
-    aonsoku
-
-    # Other
-    vim
-    wireguard-tools
-    htop
-    ffmpeg
-    yt-dlp
-    veracrypt
-    file
-    exfat
-    pciutils
   ];
 
   # Dynamic linking
@@ -46,9 +27,27 @@
   # Zsh
   programs.zsh.enable = true;
 
+  # Git
+  programs.git = {
+    enable = true;
+
+    config = {
+      init = {
+        defaultBranch = "master";
+      };
+      core = {
+        editor = "vim";
+      };
+    };
+  };
+
+  # Docker
+  virtualisation.docker.enable = true;
+
+  # Virtualbox
+  virtualisation.virtualbox.host.enable = true;
+
   # Custom
-  development.enable = true;
-  virtualization.enable = true;
   games.enable = true;
   obs.enable = true;
 }
