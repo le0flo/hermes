@@ -6,22 +6,12 @@
   config = lib.mkIf config.zed.enable {
     programs.zed-editor = {
       enable = true;
-
+      
       extensions = [
-        "html"
-        "toml"
         "one-dark-pro"
       ];
 
       userSettings = {
-        features = {
-          copilot = false;
-        };
-
-        telemetry = {
-          metrics = false;
-        };
-
         format_on_save = "off";
         vim_mode = false;
 
@@ -32,6 +22,10 @@
           mode = "system";
           light = "One Dark Pro";
           dark = "One Dark Pro";
+        };
+
+	telemetry = {
+          metrics = false;
         };
       };
     };
