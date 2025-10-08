@@ -4,7 +4,6 @@
     ./gui/plasma.nix
     ./gui/cosmic.nix
     ./gui/hyprland.nix
-    ./gui/windowmaker.nix
   ];
 
   # Drivers
@@ -38,5 +37,4 @@
   plasma.enable = false;
   cosmic.enable = false;
   hyprland.enable = false; # xdg-desktop-portal-hyprland conflicts with other xdg-desktop-portal implementations
-  windowmaker.enable = false;
 }

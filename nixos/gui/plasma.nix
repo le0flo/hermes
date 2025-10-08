@@ -7,7 +7,6 @@
     environment.plasma6.excludePackages = with pkgs.kdePackages; [
       xwaylandvideobridge
       plasma-browser-integration
-      konsole
       elisa
     ];
 
