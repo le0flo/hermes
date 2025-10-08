@@ -1,10 +1,10 @@
 {pkgs, ...}: {
   imports = [
-    ./gui/display-manager.nix
     ./gui/gnome.nix
     ./gui/plasma.nix
     ./gui/cosmic.nix
     ./gui/hyprland.nix
+    ./gui/windowmaker.nix
   ];
 
   # Drivers
@@ -13,6 +13,12 @@
     extraPackages = with pkgs; [
       intel-media-driver
     ];
+  };
+
+  # Ly
+  services.displayManager.ly = {
+    enable = true;
+    x11Support = false;
   };
 
   # X11
@@ -30,6 +36,7 @@
   # Desktop enviroments
   gnome.enable = true;
   plasma.enable = false;
-  cosmic.enable = true;
+  cosmic.enable = false;
   hyprland.enable = false; # xdg-desktop-portal-hyprland conflicts with other xdg-desktop-portal implementations
+  windowmaker.enable = false;
 }

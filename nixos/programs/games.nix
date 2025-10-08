@@ -1,7 +1,5 @@
 {pkgs, lib, config, ...}: {
-  options = {
-    games.enable = lib.mkEnableOption "steam and other game launchers";
-  };
+  options.games.enable = lib.mkEnableOption "steam and other game launchers";
 
   config = lib.mkIf config.games.enable {
     hardware.steam-hardware.enable = true;

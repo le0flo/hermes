@@ -2,9 +2,7 @@
 let
   hyprlandPackages = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
 in {
-  options = {
-    hyprland.enable = lib.mkEnableOption "hyprland";
-  };
+  options.hyprland.enable = lib.mkEnableOption "hyprland wm";
 
   config = lib.mkIf config.hyprland.enable {
     programs = {

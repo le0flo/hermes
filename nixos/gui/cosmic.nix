@@ -1,7 +1,5 @@
 {pkgs, lib, config, ...}: {
-  options = {
-    cosmic.enable = lib.mkEnableOption "cosmic";
-  };
+  options.cosmic.enable = lib.mkEnableOption "cosmic de";
 
   config = lib.mkIf config.cosmic.enable {
     services.desktopManager.cosmic.enable = true;

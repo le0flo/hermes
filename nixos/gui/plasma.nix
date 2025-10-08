@@ -1,7 +1,5 @@
 {pkgs, lib, config, ...}: {
-  options = {
-    plasma.enable = lib.mkEnableOption "plasma";
-  };
+  options.plasma.enable = lib.mkEnableOption "kde plasma";
 
   config = lib.mkIf config.plasma.enable {
     services.desktopManager.plasma6.enable = true;

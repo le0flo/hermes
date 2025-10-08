@@ -2,9 +2,7 @@
 let
   hyprlandPackages = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
 in {
-  options = {
-    hyprland.enable = lib.mkEnableOption "hyprland config";
-  };
+  options.hyprland.enable = lib.mkEnableOption "hyprland config";
 
   config = lib.mkIf config.hyprland.enable {
     wayland.windowManager.hyprland = {

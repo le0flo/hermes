@@ -1,12 +1,10 @@
 {lib, config, ...}: {
-  options = {
-    zed.enable = lib.mkEnableOption "zed config";
-  };
+  options.zed.enable = lib.mkEnableOption "zed config";
 
   config = lib.mkIf config.zed.enable {
     programs.zed-editor = {
       enable = true;
-      
+
       extensions = [
         "one-dark-pro"
       ];
