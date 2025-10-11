@@ -65,11 +65,7 @@
     description = "Leonardo";
     shell = pkgs.zsh;
 
-    extraGroups = [
-      "wheel"
-      "networkmanager"
-      "docker"
-    ];
+    extraGroups = [ "wheel" "networkmanager" ];
   };
 
   # Version

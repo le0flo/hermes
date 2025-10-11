@@ -43,9 +43,7 @@
 
   # Docker
   virtualisation.docker.enable = true;
-
-  # Virtualbox
-  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups."docker".members = [ "leo" ];
 
   # Custom
   games.enable = true;
