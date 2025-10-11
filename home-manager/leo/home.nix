@@ -16,8 +16,8 @@
   zsh.enable = true;
   zed.enable = true;
   syncthing.enable = true;
-  alacritty.enable = false;
-  hyprland.enable = false;
+  alacritty.enable = true;
+  hyprland.enable = true;
 
   # Version
   home.stateVersion = "25.05";

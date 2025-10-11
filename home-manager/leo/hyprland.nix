@@ -18,8 +18,8 @@ in {
       settings = {
         # Programs
         "$terminal" = "alacritty";
-        "$fileManager" = "alacritty -e lf";
-        "$menu" = "tofi-drun --drun-launch=true";
+        "$fileManager" = "nautilus";
+        "$menu" = "rofi -show drun";
 
         # Startup
         exec-once = [
@@ -108,10 +108,6 @@ in {
           touchpad = {
             natural_scroll = true;
           };
-        };
-
-        gestures = {
-          workspace_swipe = true;
         };
 
         # Monitor

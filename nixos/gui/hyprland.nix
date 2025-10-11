@@ -34,10 +34,7 @@ in {
 
     # Packages
     environment.systemPackages = with pkgs; [
-      tofi
-      lf
-      swww
-      ncpamixer
+      rofi lf swww
     ];
   };
 }

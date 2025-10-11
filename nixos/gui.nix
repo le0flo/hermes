@@ -36,5 +36,5 @@
   gnome.enable = true;
   plasma.enable = false;
   cosmic.enable = false;
-  hyprland.enable = false; # xdg-desktop-portal-hyprland conflicts with other xdg-desktop-portal implementations
+  hyprland.enable = true; # xdg-desktop-portal-hyprland conflicts with other xdg-desktop-portal implementations
 }

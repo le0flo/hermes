@@ -11,11 +11,11 @@
   # Packages
   environment.systemPackages = with pkgs; [
     firefox thunderbird keepassxc
-    vlc aonsoku ffmpeg yt-dlp
-    veracrypt exfat
-    zed-editor nil nixd
-    vim htop file
+    zed-editor alacritty tmux nil nixd
     openssh rsync wireguard-tools
+    vlc ffmpeg yt-dlp
+    veracrypt exfat
+    vim htop file
 
     # Home manager
     inputs.home-manager.packages.${pkgs.stdenv.hostPlatform.system}.home-manager
