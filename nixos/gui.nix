@@ -18,6 +18,10 @@
   services.displayManager.ly = {
     enable = true;
     x11Support = false;
+
+    settings = {
+      session_log = ".ly-session.log";
+    };
   };
 
   # X11
