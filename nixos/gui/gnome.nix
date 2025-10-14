@@ -10,6 +10,7 @@
       gnome-disk-utility
       gnome-music
       gnome-tour
+      gnome-weather
 
       epiphany
       geary
