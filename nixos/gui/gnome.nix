@@ -1,4 +1,4 @@
-{pkgs, lib, config, ...}: {
+{lib, config, pkgs, ...}: {
   options.gnome.enable = lib.mkEnableOption "gnome";
 
   config = lib.mkIf config.gnome.enable {

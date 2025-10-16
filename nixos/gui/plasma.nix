@@ -1,4 +1,4 @@
-{pkgs, lib, config, ...}: {
+{lib, config, pkgs, ...}: {
   options.plasma.enable = lib.mkEnableOption "kde plasma";
 
   config = lib.mkIf config.plasma.enable {

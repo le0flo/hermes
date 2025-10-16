@@ -1,4 +1,4 @@
-{pkgs, lib, config, ...}: {
+{lib, config, pkgs, ...}: {
   options.obs.enable = lib.mkEnableOption "obs and virtual camera";
 
   config = lib.mkIf config.obs.enable {

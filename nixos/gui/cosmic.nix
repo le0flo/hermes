@@ -1,4 +1,4 @@
-{pkgs, lib, config, ...}: {
+{lib, config, pkgs, ...}: {
   options.cosmic.enable = lib.mkEnableOption "cosmic de";
 
   config = lib.mkIf config.cosmic.enable {

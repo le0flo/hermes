@@ -1,5 +1,6 @@
 {inputs, pkgs, ...}: {
   imports = [
+    ./programs/cybersec.nix
     ./programs/games.nix
     ./programs/obs.nix
   ];
@@ -46,6 +47,7 @@
   users.extraGroups."docker".members = [ "leo" ];
 
   # Custom
+  cybersec.enable = true;
   games.enable = true;
   obs.enable = true;
 }
