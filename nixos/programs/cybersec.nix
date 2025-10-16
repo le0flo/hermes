@@ -5,11 +5,10 @@
     # Packages
     environment.systemPackages = with pkgs; [
       ascii gnat15 gdb binaryninja-free
-      dig
+      wireshark-qt dig postman
     ];
 
     # Wireshark
-    programs.wireshark.enable = true;
     users.extraGroups."wireshark".members = [ "leo" ];
   };
 }
