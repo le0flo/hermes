@@ -11,7 +11,7 @@
 
   # Packages
   environment.systemPackages = with pkgs; [
-    firefox thunderbird keepassxc kdePackages.okular
+    firefox thunderbird keepassxc
     zed-editor alacritty tmux nil nixd
     openssh rsync wireguard-tools
     vlc ffmpeg yt-dlp
