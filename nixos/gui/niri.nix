@@ -4,24 +4,24 @@
   config = lib.mkIf config.niri.enable {
     programs = {
       niri.enable = true;
-      waybar.enable = true;
     };
 
     # Portals
     xdg.portal = {
       config."niri" = {
-        default = [ "gnome" "gtk" ];
+        default = [ "kde" "gtk" ];
       };
 
       extraPortals = with pkgs; [
-        xdg-desktop-portal-gnome
+        kdePackages.xdg-desktop-portal-kde
+        xdg-desktop-portal-gtk
       ];
     };
 
     # Packages
     environment.systemPackages = with pkgs; [
       xwayland-satellite
-      fuzzel
+      fuzzel waybar
     ];
   };
 }

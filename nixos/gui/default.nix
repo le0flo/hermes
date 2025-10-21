@@ -40,8 +40,8 @@
   };
 
   # Custom
-  gnome.enable = true;
-  plasma.enable = false;
+  gnome.enable = false;
+  plasma.enable = true;
   cosmic.enable = false;
   niri.enable = true;
 }
