@@ -6,6 +6,7 @@
     ./programs/zed.nix
     ./programs/syncthing.nix
     ./programs/alacritty.nix
+    ./programs/waybar.nix
   ];
 
   home = {
@@ -21,6 +22,7 @@
   zed.enable = true;
   syncthing.enable = true;
   alacritty.enable = true;
+  waybar.enable = true;
 
   # Version
   home.stateVersion = "25.05";
