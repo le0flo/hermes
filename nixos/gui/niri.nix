@@ -10,7 +10,7 @@
     # Portals
     xdg.portal = {
       config."niri" = {
-        default = [ "gnome" ];
+        default = [ "gnome" "gtk" ];
       };
 
       extraPortals = with pkgs; [

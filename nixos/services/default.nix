@@ -1,6 +1,6 @@
 {...}: {
   imports = [
-    ./services/i2pd.nix
+    ./i2pd.nix
   ];
 
   # Security

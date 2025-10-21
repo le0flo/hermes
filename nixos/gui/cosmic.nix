@@ -7,12 +7,11 @@
     # Portals
     xdg.portal = {
       config."cosmic" = {
-        default = "cosmic";
+        default = [ "cosmic" ];
       };
 
       extraPortals = with pkgs; [
         xdg-desktop-portal-cosmic
-        xdg-desktop-portal-gtk
       ];
     };
   };

@@ -1,13 +1,11 @@
 {inputs, pkgs, ...}: {
   imports = [
-    ./programs/cybersec.nix
-    ./programs/games.nix
-    ./programs/obs.nix
+    ./cybersec.nix
+    ./games.nix
+    ./obs.nix
   ];
 
-  # NixOS
   nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Packages
   environment.systemPackages = with pkgs; [
@@ -16,7 +14,8 @@
     openssh rsync wireguard-tools
     vlc ffmpeg yt-dlp
     veracrypt exfat
-    vim htop file fastfetch
+    vim file
+    fastfetch btop
 
     # Home manager
     inputs.home-manager.packages.${pkgs.stdenv.hostPlatform.system}.home-manager

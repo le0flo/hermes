@@ -7,7 +7,7 @@
     # Portals
     xdg.portal = {
       config.kde = {
-        default = "kde";
+        default = [ "kde" "gtk" ];
       };
 
       extraPortals = with pkgs; [

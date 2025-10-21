@@ -1,9 +1,9 @@
 {pkgs, ...}: {
   imports = [
-    ./gui/gnome.nix
-    ./gui/plasma.nix
-    ./gui/cosmic.nix
-    ./gui/niri.nix
+    ./gnome.nix
+    ./plasma.nix
+    ./cosmic.nix
+    ./niri.nix
   ];
 
   # Drivers
@@ -39,7 +39,7 @@
     xdgOpenUsePortal = true;
   };
 
-  # Desktop enviroments
+  # Custom
   gnome.enable = true;
   plasma.enable = false;
   cosmic.enable = false;

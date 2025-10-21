@@ -7,7 +7,7 @@
     # Portals
     xdg.portal = {
       config."gnome" = {
-        default = "gnome";
+        default = [ "gnome" "gtk" ];
       };
 
       extraPortals = with pkgs; [
