@@ -10,21 +10,18 @@
     # Portals
     xdg.portal = {
       config."niri" = {
-        default = "gnome";
-        "org.freedesktop.portal.FileChooser" = "gnome";
-        "org.freedesktop.portal.OpenURI" = "gnome";
+        default = [ "gnome" ];
       };
 
       extraPortals = with pkgs; [
         xdg-desktop-portal-gnome
-        xdg-desktop-portal-termfilechooser
       ];
     };
 
     # Packages
     environment.systemPackages = with pkgs; [
       xwayland-satellite
-      fuzzel lf
+      fuzzel
     ];
   };
 }
