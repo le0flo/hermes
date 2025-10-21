@@ -4,6 +4,25 @@
   config = lib.mkIf config.gnome.enable {
     services.desktopManager.gnome.enable = true;
 
+    # Portals
+    xdg.portal = {
+      config."gnome" = {
+        default = "gnome";
+      };
+
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-gnome
+        xdg-desktop-portal-gtk
+      ];
+    };
+
+    # Packages
+    environment.systemPackages = with pkgs; [
+      gnome-tweaks
+      gnome-software
+    ];
+
+    # Excluded packages
     environment.gnome.excludePackages = with pkgs; [
       gnome-connections
       gnome-contacts
@@ -19,26 +38,6 @@
       decibels
       seahorse
       simple-scan
-    ];
-
-    # Portals
-    xdg.portal = {
-      config.gnome = {
-        default = [ "gnome" "gtk" ];
-        "org.freedesktop.portal.FileChooser" = [ "gnome" ];
-        "org.freedesktop.portal.OpenURI" = [ "gnome" ];
-      };
-
-      extraPortals = with pkgs; [
-        xdg-desktop-portal-gnome
-        xdg-desktop-portal-gtk
-      ];
-    };
-
-    # Packages
-    environment.systemPackages = with pkgs; [
-      gnome-tweaks
-      gnome-software
     ];
   };
 }

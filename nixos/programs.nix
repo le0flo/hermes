@@ -16,7 +16,7 @@
     openssh rsync wireguard-tools
     vlc ffmpeg yt-dlp
     veracrypt exfat
-    vim htop file
+    vim htop file fastfetch
 
     # Home manager
     inputs.home-manager.packages.${pkgs.stdenv.hostPlatform.system}.home-manager

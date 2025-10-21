@@ -3,7 +3,6 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
     home-manager.url = "github:nix-community/home-manager/master";
-    hyprland.url = "github:hyprwm/Hyprland/main";
 
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };

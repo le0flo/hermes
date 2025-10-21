@@ -3,7 +3,7 @@
     ./gui/gnome.nix
     ./gui/plasma.nix
     ./gui/cosmic.nix
-    ./gui/hyprland.nix
+    ./gui/niri.nix
   ];
 
   # Drivers
@@ -34,11 +34,14 @@
   };
 
   # Portals
-  xdg.portal.enable = true;
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+  };
 
   # Desktop enviroments
   gnome.enable = true;
   plasma.enable = false;
   cosmic.enable = false;
-  hyprland.enable = true; # xdg-desktop-portal-hyprland conflicts with other xdg-desktop-portal implementations
+  niri.enable = true;
 }

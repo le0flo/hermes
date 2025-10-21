@@ -4,18 +4,10 @@
   config = lib.mkIf config.plasma.enable {
     services.desktopManager.plasma6.enable = true;
 
-    environment.plasma6.excludePackages = with pkgs.kdePackages; [
-      xwaylandvideobridge
-      plasma-browser-integration
-      elisa
-    ];
-
     # Portals
     xdg.portal = {
       config.kde = {
-        default = [ "kde" "gtk" ];
-        "org.freedesktop.portal.FileChooser" = [ "kde" ];
-        "org.freedesktop.portal.OpenURI" = [ "kde" ];
+        default = "kde";
       };
 
       extraPortals = with pkgs; [
@@ -32,6 +24,13 @@
 
       sddm-kcm
       flatpak-kcm
+    ];
+
+    # Excluded packages
+    environment.plasma6.excludePackages = with pkgs.kdePackages; [
+      xwaylandvideobridge
+      plasma-browser-integration
+      elisa
     ];
   };
 }
