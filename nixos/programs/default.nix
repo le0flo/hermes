@@ -1,5 +1,6 @@
 {inputs, pkgs, ...}: {
   imports = [
+    ./fonts.nix
     ./cybersec.nix
     ./games.nix
     ./obs.nix
@@ -46,6 +47,7 @@
   users.extraGroups."docker".members = [ "leo" ];
 
   # Custom
+  fonts.enable = true;
   cybersec.enable = true;
   games.enable = true;
   obs.enable = true;

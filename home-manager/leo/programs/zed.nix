@@ -7,6 +7,7 @@
 
       extensions = [
         "one-dark-pro"
+        "latex"
       ];
 
       userSettings = {
@@ -22,8 +23,21 @@
           dark = "One Dark Pro";
         };
 
-	telemetry = {
+        telemetry = {
           metrics = false;
+        };
+
+        lsp = {
+          texlab = {
+            settings = {
+              texlab = {
+                build = {
+                  onSave = false;
+                  forwardSearchAfter = false;
+                };
+              };
+            };
+          };
         };
       };
     };
