@@ -4,11 +4,13 @@
   config = lib.mkIf config.cybersec.enable {
     # Packages
     environment.systemPackages = with pkgs; [
-      ascii gnat15 gdb binaryninja-free
+      ascii gnat15 gdb gef ghidra-bin binaryninja-free
       wireshark-qt dig postman
     ];
 
     # Wireshark
+    programs.wireshark.enable = true;
+    programs.wireshark.dumpcap.enable = true;
     users.extraGroups."wireshark".members = [ "leo" ];
   };
 }

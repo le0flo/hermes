@@ -11,11 +11,12 @@
   # Packages
   environment.systemPackages = with pkgs; [
     firefox thunderbird keepassxc
-    zed-editor alacritty tmux nil nixd
-    openssh rsync wireguard-tools
     vlc ffmpeg yt-dlp
+    zed-editor alacritty
+    gnumake texliveFull nil nixd
+    openssh rsync wireguard-tools
     veracrypt exfat
-    vim file
+    tmux vim file
     fastfetch btop
 
     # Home manager
@@ -45,6 +46,14 @@
   # Docker
   virtualisation.docker.enable = true;
   users.extraGroups."docker".members = [ "leo" ];
+
+  # Virt manager
+  virtualisation = {
+    libvirtd.enable = true;
+    spiceUSBRedirection.enable = true;
+  };
+  users.groups."libvirtd".members = [ "leo" ];
+  programs.virt-manager.enable = true;
 
   # Custom
   fonts.enable = true;
