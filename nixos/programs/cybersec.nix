@@ -4,7 +4,7 @@
   config = lib.mkIf config.cybersec.enable {
     # Packages
     environment.systemPackages = with pkgs; [
-      ascii gnat15 gdb gef ghidra-bin binaryninja-free
+      ascii gnat15 gdb gef ghidra-bin
       wireshark-qt dig postman
     ];
 
