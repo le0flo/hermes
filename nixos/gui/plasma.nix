@@ -16,6 +16,8 @@
       ];
     };
 
+    services.fwupd.enable = true;
+
     # Packages
     environment.systemPackages = with pkgs.kdePackages; [
       kate
@@ -28,7 +30,6 @@
 
     # Excluded packages
     environment.plasma6.excludePackages = with pkgs.kdePackages; [
-      xwaylandvideobridge
       plasma-browser-integration
       elisa
     ];

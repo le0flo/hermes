@@ -10,7 +10,7 @@
 
   # Packages
   environment.systemPackages = with pkgs; [
-    firefox thunderbird keepassxc
+    firefox thunderbird keepassxc kdePackages.kleopatra
     vlc ffmpeg yt-dlp
     zed-editor alacritty
     gnumake texliveFull nil nixd
@@ -42,6 +42,9 @@
       };
     };
   };
+
+  # GPG
+  programs.gnupg.agent.enable = true;
 
   # Docker
   virtualisation.docker.enable = true;
