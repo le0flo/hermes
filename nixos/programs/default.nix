@@ -13,7 +13,7 @@
     firefox thunderbird keepassxc kdePackages.kleopatra
     vlc ffmpeg yt-dlp
     zed-editor alacritty
-    gnumake texliveFull nil nixd
+    nil nixd
     openssh rsync wireguard-tools
     veracrypt exfat
     tmux vim file
